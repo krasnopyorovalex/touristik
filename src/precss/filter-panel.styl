@@ -72,11 +72,22 @@
     .tags
       border: none
       max-height: 100%
+      padding 1em 0
       li
+        margin: 0 4px 10px 0
+        display: inline-block
         a
+          display: block
           color: #2f2f2f
           font-size: rem(14px)
           font-weight: 400
+          padding 4px 8px
+          border: 1px solid #d9d6d6
+          background-color: #ffffff
+          &:hover
+            border: 1px solid #4aa933
+            &:after
+              opacity 0
     .single__block-price
       display: flex
       flex-wrap wrap
@@ -96,3 +107,8 @@
           text-align: center
           width: 80px
           padding 4px 5px
+.sorting
+  margin 1em 0
+  .label
+    font-size: rem(16px)
+    font-weight: 500

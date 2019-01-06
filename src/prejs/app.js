@@ -131,7 +131,7 @@ jQuery(document).ready(function() {
 
         filterPanel.find(".filter__block:not(.is__opened) .list").removeClass("hidden").hide();
 
-        filterPanel.on('click', '.label', function () {
+        filterPanel.on('click', '.filter__block .label', function () {
             var _this = jQuery(this),
                 filterBlock = _this.next('div').closest(".filter__block");
             if(filterBlock.hasClass("is__opened")){
