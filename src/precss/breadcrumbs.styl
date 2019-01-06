@@ -1,0 +1,20 @@
+.breadcrumbs
+  margin 10px 0
+  li
+    display: inline-block
+    position: relative
+    font-size: rem(13px)
+    color: #000000
+    a
+      color: #24bb00;
+      font-weight: 400
+      &:hover
+        color #00cc45
+    & + li
+      padding-left: 10px
+      &:before
+        content "/"
+        color: #24bb00
+        position: absolute
+        left: 0
+        top: 0

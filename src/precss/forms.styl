@@ -1,0 +1,115 @@
+.form__order
+  background-color: #666666
+  padding: 1.8em
+  margin 0 auto
+  max-width: 360px
+  md-block({
+    margin: 1em auto 0 auto
+  })
+  .single__block
+    .icon
+      position: absolute
+      top: 18px
+      left: 16px
+    .email
+      top: 20px
+      sprite($icon_phone_mail)
+    .phone
+      sprite($icon_phone_green)
+    .human
+      sprite($icon_human_green)
+    .btn
+      font-size: rem(17px)
+      color: #ffffff
+      width: 200px
+      padding 15px 25px
+      &:hover
+        cursor: pointer
+  .submit
+    margin 2em 0 0 0
+    display: block
+form
+  .single__block
+    position: relative
+    margin 0 0 10px 0
+    .title
+      color: #000000
+      font-size: rem(22px)
+      margin: 0 0 1em 0
+      padding: 0
+      font-weight: 500
+      line-height: 22px
+      text-transform: uppercase
+    &.i__agree
+      input
+        display: inline-block
+        width: 14px
+        height: 14px
+        vertical-align: middle
+        margin 0 5px 0 0
+      label
+        color: #ffffff
+        font-size: rem(14px)
+    input, textarea
+      border none
+      box-sizing border-box
+      width: 100%
+      background-color: #ffffff
+      padding 15px 10px 15px 40px
+    textarea
+      padding 15px
+input, textarea
+  &:focus::placeholder
+    color transparent
+.search
+  margin 5px 0
+  .single__block
+    input
+      padding 10px 15px
+    .search
+      width: 17px
+      height: 17px
+      position: absolute
+      right: 12px
+      top: 8px
+      fill #272727
+.popup__show-bg
+  background-color: rgba(0,0,0,0.7)
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index 1
+  display: none
+.popup
+  display: none
+  position: fixed
+  top 25%
+  left 0
+  right: 0
+  z-index 10
+  sm-block({
+    top: 20%
+  })
+  .form__order
+    background-color: #ffffff
+    .single__block
+      input, textarea
+        border: 1px solid #cacaca
+        background-color: #f6f6f6
+      &.i__agree
+        label
+          color: #474747
+  .close__box
+    display: block
+    position: relative
+    width: 100%
+    .close
+      padding 5px
+      position: absolute
+      right: -1em
+      top: -1em
+      sprite($icon_close)
+      &:hover
+        cursor: pointer

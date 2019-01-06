@@ -1,0 +1,98 @@
+.filter__panel
+  margin 1em 0
+  .filter__block, .filter__block-price
+    border-bottom: 1px solid #6a6a6a
+    padding 0 0 1em 0
+    &+.filter__block
+      padding 1em 0
+  .filter__block
+    .label
+      position: relative
+      padding 5px 0
+      color: #000000
+      font-size: rem(16px)
+      font-weight: 500
+      &:hover
+        cursor: pointer
+      &:after
+        transform: rotate(180deg)
+        transition: all 300ms ease
+        content ""
+        position: absolute
+        right: 0
+        top: 12px
+        sprite($icon_arrow_black)
+  &-form
+    .filter__block.is__opened
+      .label:after
+        transform: rotate(0deg)
+    .list, .tags
+      max-height 228px
+      overflow auto
+      margin 5px 0
+      padding 1em 1.2em
+      border: 1px solid #c1bebe
+      .list__item
+        position: relative
+        & + .list__item
+          margin .6em 0 0 0
+        label
+          display: inline-block
+          vertical-align: middle
+          margin-left: 8px
+          &:hover
+            cursor: pointer
+          &:before
+            box-sizing border-box
+            transition: all 300ms ease
+            border: 1px solid #c1bebe
+            background-color: #ffffff
+            content: ''
+            width: 16px
+            height: 16px
+            left: 0
+            position: absolute
+            top: 3px
+        input[type="checkbox"]
+          margin-left: 0
+          opacity: 0
+          width: auto
+          height: auto
+          &:checked + label:before
+            background-color: #4aa933
+          &:checked + label:after
+            box-sizing border-box
+            position: absolute
+            content ""
+            border 2px solid #ffffff
+            height: 12px
+            width: 12px
+            left: 2px
+            top: 5px
+    .tags
+      border: none
+      max-height: 100%
+      li
+        a
+          color: #2f2f2f
+          font-size: rem(14px)
+          font-weight: 400
+    .single__block-price
+      display: flex
+      flex-wrap wrap
+      > div
+        col()
+        size(6)
+        size-xs(12)
+        &:last-child
+          text-align: right
+        label, input
+          display: inline-block
+        label + input
+          margin-left: 4px
+        input
+          border: 1px solid #c1bebe
+          background-color: #eeeeee
+          text-align: center
+          width: 80px
+          padding 4px 5px

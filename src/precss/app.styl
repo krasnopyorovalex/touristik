@@ -1,0 +1,661 @@
+flex-version = flex
+vendor-prefixes = official
+@import "nib"
+@import "smart-grid"
+@import "type-utils"
+@import "fonts"
+@import "sprite"
+
+base-font-size = 16px
+support-for-ie = false
+
+reset()
+
+//.debug
+//  z-index 10
+//  debug(rgba(0,0,0,0.4), 1px solid #ff0)
+*
+  box-sizing border-box
+body
+  font-family "Roboto Condensed"
+a, .icon
+  text-decoration:none
+  color: #4aa933
+  cursor:pointer
+  transition: all 300ms ease
+a:hover,a:focus,a:visited
+  text-decoration:none
+  outline:none
+p
+  margin 0 0 15px 0
+  text-align justify
+  font-size rem(16px)
+  line-height normal
+h1, .as__h1, h2, .as__h2, h3, .as__h3, h4, .as__h4, h5, .as__h5
+  color: #000000
+  font-size: rem(40px)
+  font-weight: 400
+  margin-bottom .5em
+  margin-top .5em
+  md-block({
+    font-size: rem(24px)
+  })
+h2, .as__h2
+  font-size: rem(32px)
+  md-block({
+    font-size: rem(22px)
+  })
+h3, .as__h3
+  font-size: rem(28px)
+  md-block({
+    font-size: rem(20px)
+  })
+h4, .as__h4
+  font-size: rem(24px)
+  md-block({
+    font-size: rem(18px)
+  })
+h5, .as__h5
+  font-size: rem(20px)
+  md-block({
+    font-size: rem(16px)
+  })
+.not__overflow
+  overflow hidden
+.container
+  wrapper()
+.row
+  row-flex()
+  justify-content center
+  .col-12
+    col()
+    size(12)
+  .col-11
+    col()
+    size(11)
+    size-xs(12)
+  .col-10
+    col()
+    size(10)
+    size-xs(12)
+  .col-9
+    col()
+    size(9)
+    size-xs(12)
+  .col-8
+    col()
+    size(8)
+    size-md(12)
+    size-xs(12)
+  .col-7
+    col()
+    size(7)
+    size-xs(12)
+  .col-6
+    col()
+    size(6)
+    size-xs(12)
+  .col-5
+    col()
+    size(5)
+    size-lg(5)
+    size-md(11)
+    size-xs(12)
+  .col-4
+    col()
+    size(4)
+    size-xs(6)
+    size-xxs(12)
+  .col-3
+    col()
+    size(3)
+    size-md(6)
+    size-xxs(12)
+  .col-2
+    col()
+    size(2)
+    size-xs(12)
+figure
+  margin: 0
+  padding: 0
+.center
+  text-align: center
+header
+  color #ffffff
+  .top__line
+    padding 12px 0
+    background-color: #373737
+    font-size rem(14px)
+    .row
+      align-items center
+    a
+      color #ffffff
+      &:hover
+        color #4aa933
+    .phone
+      &:hover
+        .icon
+          fill: #4aa933
+      .icon
+        margin-right 2px
+        vertical-align: top
+        width: 14px
+        height: 14px
+    .address
+      .icon
+        vertical-align: top
+        margin-right 2px
+        width: 13px
+        height: 15px
+    .search__socials-icons
+      display flex
+      flex-wrap wrap
+      justify-content flex-end
+      align-items center
+      .icon:hover
+        fill: #4aa933
+      .delimiter
+        margin 0 16px
+        width: 1px
+        align-self stretch
+        background-color: #5d5d5d
+      a + a
+        margin-left: 8px
+      .search
+        width: 17px
+        height: 17px
+      .vk
+        width: 20px
+        height: 18px
+      .fb
+        width: 20px
+        height: 16px
+      .ok
+        width: 20px
+        height: 17px
+      .insta
+        width: 16px
+        height: 15px
+      .twitter
+        width: 24px
+        height: 18px
+.header__nav
+  display: flex
+  flex-wrap wrap
+  justify-content: space-between
+  align-items center
+  padding .5em 0
+  li
+    display: inline-block
+    a
+      color: #272727
+      font-size: rem(18px)
+      font-weight: 500
+      line-height: 18px
+      position: relative
+      text-transform: uppercase
+      padding 10px 5px
+      &:after
+        transition: all 300ms ease
+        position: absolute
+        content ""
+        width 10%
+        height: 2px
+        background-color: #5ac840
+        bottom: 5px
+        left 5px
+        opacity 0
+    &.logo
+      order: 2
+    &:nth-of-type(n+5)
+      order: 2
+    &:hover:not(.logo)
+      a
+        color: #24bb00
+        &:after
+          width 50%
+          opacity 1
+.travels
+  background-image url("../img/mountains_bg.png")
+  background-position center bottom
+  background-repeat no-repeat
+  padding 2em 0
+  .title
+    &:after
+      sprite($icon_mountains)
+  .travel__item-two, .travel__item
+    .btn__more
+      transition: all 300ms ease
+      content ""
+      position: absolute
+      top: calc(50% - 26px)
+      left: calc(50% - 26px)
+      sprite($icon_zoom)
+      opacity 0
+      z-index 10
+      cursor: pointer
+    &:hover
+      &:after, .btn__more, a:after
+        opacity 1
+  .travel__item
+    position: relative
+    margin-top: 2em
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.4) 34%, rgba(0, 0, 0, 0.3) 47%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%);
+    &:after
+      transition: all 300ms ease
+      background-color: rgba(0, 0, 0, 0.4);
+      position: absolute
+      content ""
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      opacity 0
+    &-name a
+      padding 5px 1em
+      z-index 10
+      position: absolute
+      bottom: 2em
+      width: 100%
+      text-align: center
+      color: #ffffff
+      font-size: rem(22px)
+      font-weight: 500
+      line-height: 30px
+      text-transform: uppercase
+      &:after
+        transition: all 300ms ease
+        position: absolute
+        content ""
+        bottom: 0
+        left: calc(50% - 30px)
+        background-color: #5ac840
+        width 60px
+        height: 2px
+        opacity 0
+      &:hover:after
+        left: calc(50% - 60px)
+        width: 120px
+  .travel__item-two
+    position: relative
+    margin-top: 2em
+    .travel__count
+      position: absolute
+      left: .1em
+      bottom: -.04em
+      opacity: 0.6;
+      color: #ffffff
+      font-size: rem(90px)
+      font-weight: 700
+      text-transform: uppercase
+      z-index 10
+    img
+      height: 100%
+    &:after
+      transition: all 300ms ease
+      background-color: rgba(0, 0, 0, 0.54)
+      position: absolute
+      content ""
+      top: 0
+      bottom: 4px
+      right: 0
+      left: 0
+      opacity 0
+    &:hover
+      &:after
+        opacity 1
+    .travel__item-name a
+      background-color: rgba(0, 0, 0, 0.54)
+      clip-path: polygon(0 0, 0% 100%, 100% 100%);
+      padding 3em .5em 1.5em .5em
+      text-align: left
+      bottom: 4px
+      left: 0
+      z-index: 12
+      &:after
+        left: .5em
+        bottom: 1.4em
+.info__text
+  //margin 2em 0 0 0
+  .title
+    &:after
+      bottom: 0
+      left: calc(50% - 70px)
+      position: absolute
+      content ""
+      sprite($icon_sun)
+  [class*="col-"]
+    position: relative
+  .col-6
+    size-md(12)
+  .text
+    margin 1em 0 2em 0
+    p
+      line-height 22px
+    a
+      color: #ffffff
+  .img__bg img
+    height: 100%
+    width: 100%
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+.begin__travel
+  position: relative
+  //margin 2em 0 0 0
+  padding 2em 0 3em 0
+  .col-7, .col-5
+    size-md(12)
+  .bg__layer
+    clip-path: polygon(50% 100%, 100% 90%, 100% 0, 0 0, 0 90%)
+    background-color: #ebebeb
+    position: absolute
+    top: 0
+    bottom: 6em
+    right: 0
+    left: 0
+    z-index -1
+  .desc
+    margin-top: 4em
+  .title__first, .title__second
+    color: #2b2b2b
+    font-size: rem(42px)
+    font-weight: 600
+    text-transform: uppercase
+    xs-block({
+      font-size: rem(28px)
+    })
+  .title__second
+    color: #4aa933
+  p
+    color: #000000
+    margin 2em 0 0 0
+    font-size: rem(18px)
+    font-weight: 400
+    line-height: 24px
+.gallery
+  .title
+    &:after
+      sprite($icon_forest)
+.guides
+  margin 2em 0
+  .title
+    &:after
+      sprite($icon_camp)
+  .guide__item
+    overflow hidden
+    position: relative
+    margin 1em 0 0 0
+    border-bottom 2px solid #494949
+    transition: all 300ms ease
+    .ava
+      position: relative
+      img
+        height: 100%
+      &:after
+        background-color: rgba(0, 0, 0, 0.5)
+        transition: all 300ms ease
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        content ""
+        opacity 0
+    &:hover
+      cursor: pointer
+      border-bottom 2px solid #4aa933
+      .ava:after
+        opacity 1
+    .info
+      min-height 160px
+      clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%)
+      text-align: center
+      background-color: #ebebeb
+      position: absolute
+      bottom: 0
+      right: -1%
+      left: -1%
+      padding 1em 1em 0 1em
+      display: flex
+      flex-wrap wrap
+      flex-direction column
+      .name
+        color: #000000
+        margin 2em 0 0 0
+        font-size: rem(20px)
+        font-weight: 400
+        position: relative
+        line-height: 20px
+        text-transform: uppercase
+        &:after
+          transition: all 300ms ease
+          position: absolute
+          content ""
+          width 20px
+          height: 3px
+          background-color: #5ac840
+          bottom: -5px
+          left calc(50% - 10px)
+          opacity 0
+        &:hover:after
+          opacity 1
+          left calc(50% - 25px)
+          width 50px
+      .text
+        margin auto 0 0 0
+      .text, .text p
+        color: #000000
+        font-size: rem(14px)
+        font-weight: 400
+        line-height: 20px
+.counts
+  background-image url("../img/counts_bg.jpg")
+  background-repeat no-repeat
+  background-size cover
+  padding 3em 0
+  margin 1em 0
+  &.without__margin
+    margin: 0
+  .count__item
+    color #ffffff
+    text-align: center
+    .icon
+      display: inline-block
+      &:hover
+        cursor: default
+    .photo
+      sprite($icon_photo_big)
+    .map
+      sprite($icon_map_big)
+    .bus
+      sprite($icon_bus_big)
+    .tourist
+      sprite($icon_tourist_big)
+    .count
+      font-size: rem(62px)
+      margin 10px 0 15px 0
+      padding 10px 0
+      font-weight: 500
+      text-transform: uppercase
+      position: relative
+      &:after
+        position: absolute
+        content ""
+        bottom: 4px
+        height 4px
+        background-color: #4aa933
+        width: 50px
+        left calc(50% - 25px)
+    .count__name
+      font-size: rem(32px)
+      font-weight: 700
+      margin 10px 0
+      text-transform: uppercase
+      xs-block({
+        font-size: rem(22px)
+      })
+    .count__desc, .count__desc p
+      font-size: rem(18px)
+      text-align: center
+      font-weight: 400
+      line-height: 22px
+main
+  a
+    position: relative
+    &:after
+      position: absolute
+      transition: all 300ms ease
+      content ""
+      bottom: -1px
+      left: 0
+      height 1px
+      width: 10%
+      background-color: #4aa933
+      opacity 0
+    &:hover:after
+      opacity 1
+      width: 100%
+  p
+    line-height 22px
+.seo
+  background-image: url("../img/seo_bg.png")
+  background-repeat no-repeat
+  background-size cover
+  padding 0 0 2em 0
+  &__text
+    padding 1em 2em
+    background-color: rgba(255,255,255,.5)
+    margin 2em 0
+    a
+      position: relative
+      &:after
+        position: absolute
+        transition: all 300ms ease
+        content ""
+        bottom: -1px
+        left: 0
+        height 1px
+        width: 10%
+        background-color: #4aa933
+        opacity 0
+      &:hover:after
+        opacity 1
+        width: 100%
+    p
+      line-height 22px
+  .title
+    &:after
+      sprite($icon_globus)
+  &.page
+    .seo__text
+      margin 0
+    .title
+      &:after
+        sprite($icon_sun)
+footer
+  background-image: url("../img/footer_bg.png")
+  background-repeat no-repeat
+  background-size cover
+  color #ffffff
+  padding 1em 0
+  ul
+    li
+      a
+        padding 5px 0
+        display: inline-block
+        margin 2px 0
+        color: #ffffff
+        font-size: rem(16px)
+        font-weight: 500
+        line-height: 18px
+        text-transform: uppercase
+        position: relative
+        &:after
+          position: absolute
+          transition: all 300ms ease
+          content ""
+          bottom: 0
+          left: 0
+          height 2px
+          width: 10%
+          background-color: #5ac840
+          opacity 0
+        &:hover
+          color: #24bb00
+          &:after
+            width: 50%
+            opacity 1
+  .contact
+    padding 5px 0
+    margin 2px 0
+    a
+      color #ffffff
+      &:hover
+        color: #24bb00
+    .icon
+      vertical-align: top
+      margin-right: 5px
+      fill #4aa933
+      width: 16px
+      height: 16px
+    .map
+      height: 18px
+  .copyright
+    display: block
+    text-align: left
+    width: 100%
+    margin 10px 0 0 0
+    font-size: rem(10px)
+    font-weight: 400
+    line-height: 21px
+    letter-spacing: 0.97px
+    text-transform: uppercase
+    xs-block({
+      text-align: center
+    })
+  .socials
+    text-align: right
+    xxs-block({
+      text-align: center
+    })
+    > a + a
+      margin-left: 5px
+    .icon:hover
+      fill: #24bb00
+    .vk
+      width: 20px
+      height: 18px
+    .fb
+      width: 20px
+      height: 16px
+    .ok
+      width: 20px
+      height: 17px
+    .insta
+      width: 16px
+      height: 15px
+    .twitter
+      width: 24px
+      height: 18px
+
+@import "404"
+@import "breadcrumbs"
+@import "footer"
+@import "forms"
+@import "filter-panel"
+@import "mobile-menu"
+@import "css/owl.carousel.min"
+@import "css/owl.theme.default.min"
+@import "css/lightbox"
+@import "css/nouislider"
+@import "components"
+
+button
+  outline none
+  border none
+button::-moz-focus-inner
+  outline: none
+  border 0
