@@ -36,39 +36,6 @@
         position: relative
         & + .list__item
           margin .6em 0 0 0
-        label
-          display: inline-block
-          vertical-align: middle
-          margin-left: 8px
-          &:hover
-            cursor: pointer
-          &:before
-            box-sizing border-box
-            transition: all 300ms ease
-            border: 1px solid #c1bebe
-            background-color: #ffffff
-            content: ''
-            width: 16px
-            height: 16px
-            left: 0
-            position: absolute
-            top: 3px
-        input[type="checkbox"]
-          margin-left: 0
-          opacity: 0
-          width: auto
-          height: auto
-          &:checked + label:before
-            background-color: #4aa933
-          &:checked + label:after
-            box-sizing border-box
-            position: absolute
-            content ""
-            border 2px solid #ffffff
-            height: 12px
-            width: 12px
-            left: 2px
-            top: 5px
     .tags
       border: none
       max-height: 100%
@@ -109,6 +76,21 @@
           padding 4px 5px
 .sorting
   margin 1em 0
+  display: block
+  text-align: right
   .label
+    display: inline-block
     font-size: rem(16px)
     font-weight: 500
+  form
+    display: inline-block
+    .single__block
+      display: inline-block
+      margin 0 0 0 1em
+    select
+      outline none
+      appearance: none
+      padding 8px 30px 8px 10px
+      display: inline-block
+      border: 1px solid #c1bebe
+      background-color: #ffffff

@@ -4,21 +4,45 @@ jQuery(document).ready(function() {
         'albumLabel': 'Изображение %1 из %2'
     });
 
-    var owl = jQuery('.owl-carousel');
-    if (owl.length) {
-        owl.owlCarousel({
+    var slider = jQuery('.slider');
+    if (slider.length) {
+        slider.owlCarousel({
             loop:false,
             margin:0,
             nav:false,
             dots:false,
             items: 1
         });
-        var dots = jQuery('.owl-dots');
+        var dots = slider.find('.owl-dots');
         dots.on("click", ".owl-dot", function () {
             var pos = parseInt(jQuery(this).text());
-            return owl.trigger('to.owl.carousel', pos - 1);
+            return slider.trigger('to.owl.carousel', pos - 1);
         });
     }
+
+    var anotherProducts = jQuery(".another__products");
+    if (anotherProducts.length) {
+        anotherProducts.find(".catalog__items").owlCarousel({
+            loop:true,
+            margin:20,
+            nav:true,
+            dots:false,
+            items: 4
+        });
+    }
+
+    var productGal = jQuery(".product__gallery-carousel");
+    if (productGal.length) {
+        productGal.owlCarousel({
+            loop:false,
+            margin:0,
+            nav:true,
+            dots:false,
+            items: 1
+        });
+    }
+
+    jQuery("#sticker").sticky({topSpacing:0, zIndex: 20});
 
     var callPopup = jQuery(".call__popup");
     if(callPopup.length) {
@@ -39,92 +63,94 @@ jQuery(document).ready(function() {
     |-----------------------------------------------------------
     */
     var keypressSlider = document.getElementById('keypress');
-    var input0 = document.getElementById('input__price-from');
-    var input1 = document.getElementById('input__price-to');
-    var inputs = [input0, input1];
+    if(keypressSlider) {
+        var input0 = document.getElementById('input__price-from');
+        var input1 = document.getElementById('input__price-to');
+        var inputs = [input0, input1];
 
-    noUiSlider.create(keypressSlider, {
-        connect: true,
-        start: [0, 20000],
-        format: {
-            to: function (value) {
-                return parseInt(value);
+        noUiSlider.create(keypressSlider, {
+            connect: true,
+            start: [0, 20000],
+            format: {
+                to: function (value) {
+                    return parseInt(value);
+                },
+                from: function (value) {
+                    return parseInt(value);
+                }
             },
-            from: function (value) {
-                return parseInt(value);
-            }
-        },
-        range: {
-            'min': [0],
-            'max': [20000]
-        }
-    });
-
-    keypressSlider.noUiSlider.on('update', function (values, handle) {
-        inputs[handle].value = values[handle];
-    });
-
-    inputs.forEach(function (input, handle) {
-
-        input.addEventListener('change', function () {
-            keypressSlider.noUiSlider.setHandle(handle, this.value);
-        });
-
-        input.addEventListener('keydown', function (e) {
-
-            var values = keypressSlider.noUiSlider.get();
-            var value = Number(values[handle]);
-
-            // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
-            var steps = keypressSlider.noUiSlider.steps();
-
-            // [down, up]
-            var step = steps[handle];
-
-            var position;
-
-            // 13 is enter,
-            // 38 is key up,
-            // 40 is key down.
-            switch (e.which) {
-
-                case 13:
-                    keypressSlider.noUiSlider.setHandle(handle, this.value);
-                    break;
-
-                case 38:
-
-                    // Get step to go increase slider value (up)
-                    position = step[1];
-
-                    // false = no step is set
-                    if (position === false) {
-                        position = 1;
-                    }
-
-                    // null = edge of slider
-                    if (position !== null) {
-                        keypressSlider.noUiSlider.setHandle(handle, value + position);
-                    }
-
-                    break;
-
-                case 40:
-
-                    position = step[0];
-
-                    if (position === false) {
-                        position = 1;
-                    }
-
-                    if (position !== null) {
-                        keypressSlider.noUiSlider.setHandle(handle, value - position);
-                    }
-
-                    break;
+            range: {
+                'min': [0],
+                'max': [20000]
             }
         });
-    });
+
+        keypressSlider.noUiSlider.on('update', function (values, handle) {
+            inputs[handle].value = values[handle];
+        });
+
+        inputs.forEach(function (input, handle) {
+
+            input.addEventListener('change', function () {
+                keypressSlider.noUiSlider.setHandle(handle, this.value);
+            });
+
+            input.addEventListener('keydown', function (e) {
+
+                var values = keypressSlider.noUiSlider.get();
+                var value = Number(values[handle]);
+
+                // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
+                var steps = keypressSlider.noUiSlider.steps();
+
+                // [down, up]
+                var step = steps[handle];
+
+                var position;
+
+                // 13 is enter,
+                // 38 is key up,
+                // 40 is key down.
+                switch (e.which) {
+
+                    case 13:
+                        keypressSlider.noUiSlider.setHandle(handle, this.value);
+                        break;
+
+                    case 38:
+
+                        // Get step to go increase slider value (up)
+                        position = step[1];
+
+                        // false = no step is set
+                        if (position === false) {
+                            position = 1;
+                        }
+
+                        // null = edge of slider
+                        if (position !== null) {
+                            keypressSlider.noUiSlider.setHandle(handle, value + position);
+                        }
+
+                        break;
+
+                    case 40:
+
+                        position = step[0];
+
+                        if (position === false) {
+                            position = 1;
+                        }
+
+                        if (position !== null) {
+                            keypressSlider.noUiSlider.setHandle(handle, value - position);
+                        }
+
+                        break;
+                }
+            });
+        });
+    }
 
     var filterPanel = jQuery(".filter__panel");
     if(filterPanel.length) {
@@ -140,6 +166,8 @@ jQuery(document).ready(function() {
             return filterBlock.addClass("is__opened") && _this.next('div').slideToggle();
         });
     }
+
+    jQuery(".tabs").lightTabs();
 
     /*
     |-----------------------------------------------------------

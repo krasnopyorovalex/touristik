@@ -82,17 +82,17 @@
                 </div>
             </div>
         </div>
-        <nav>
+        <nav id="sticker">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <ul class="header__nav">
                             <li class="logo"><a href="/"><img src="./img/logo.png" alt="logo"></a></li>
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Туры</a></li>
+                            <li><a href="/">Главная</a></li>
+                            <li><a href="/about.html">О нас</a></li>
+                            <li><a href="/catalog.html">Туры</a></li>
                             <li><a href="#">Отзывы</a></li>
-                            <li><a href="#">Блог</a></li>
+                            <li><a href="/articles.html">Блог</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>
                     </div>
@@ -102,7 +102,7 @@
     </header>
 
     <section>
-        <div class="owl-carousel owl-theme">
+        <div class="owl-carousel owl-theme slider">
             <div class="item" style="background-image: url('./img/slider-01.jpg')">
                 <div class="container">
                     <div class="row">
@@ -310,8 +310,8 @@
                             <textarea name="info" placeholder="Доп. информация"></textarea>
                         </div>
                         <div class="single__block i__agree">
+                            <input type="checkbox" name="agree" id="agree" checked="checked">
                             <label for="agree">
-                                <input type="checkbox" name="agree" id="agree" checked="checked">
                                 Согласие на обработку персональных данных
                             </label>
                         </div>
