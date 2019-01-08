@@ -14,7 +14,7 @@ img
     position: relative
     background-size cover
     clip-path: polygon(50% 100%, 100% 90%, 100% 0, 0 0, 0 90%)
-    xs-block({
+    sm-block({
       text-align: center
       padding: 4em 0
     })
@@ -49,7 +49,7 @@ img
         line-height: 50px
         text-transform: uppercase
         font-weight: 700
-        xs-block({
+        sm-block({
           line-height: 40px
           font-size: rem(28px)
         })
@@ -117,8 +117,10 @@ img
     left: 4px
     border: 1px solid #ffffff
     opacity 0
-  &:hover:after
-    opacity 1
+  &:hover
+    cursor: pointer
+    &:after
+      opacity 1
 .title
   padding 0 0 1.5em 0
   margin 1em 0 .5em 0
@@ -128,6 +130,9 @@ img
   font-weight: 500
   line-height: 20px
   position: relative
+  xs-block({
+    font-size: rem(26px)
+  })
 .sub__title
   margin 1em 0 0 0
   text-align: center
@@ -136,6 +141,9 @@ img
   font-weight: 500
   line-height: 20px
   text-transform: uppercase
+  xs-block({
+    font-size: rem(18px)
+  })
 .gallery__box
   display: flex
   flex-wrap: wrap
@@ -203,9 +211,14 @@ section, main
     padding 0 0 1em 0
     col()
     size(4)
+    size-md(6)
+    size-xxs(12)
     display: flex
     flex-direction column
     align-content center
+    xs-block({
+      margin: 1em 1em 0 1em
+    })
     a:after
       display: none
     figure

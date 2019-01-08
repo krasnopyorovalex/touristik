@@ -1,4 +1,4 @@
-.styled__checkbox, .i__agree, .filter__block
+.styled__checkbox, .filter__block
   label
     display: inline-block
     vertical-align: middle
@@ -39,6 +39,9 @@ input[type="checkbox"]
   max-width: 360px
   md-block({
     margin: 1em auto 0 auto
+  })
+  xs-block({
+    margin: 1em .4em
   })
   .single__block
     .icon
@@ -81,15 +84,14 @@ form
         height: 14px
         vertical-align: middle
         margin 0 5px 0 0
+        opacity 1
+        outline none
       label
         color: #ffffff
         margin: 0
         font-size: rem(14px)
-        &:before
-          top: 2px
-          border: none
-        &:after
-          top: 4px
+        &:after, &:before
+          display: none
     input, textarea
       border none
       box-sizing border-box
@@ -102,6 +104,7 @@ input, textarea
   &:focus::placeholder
     color transparent
 .search
+  display: none
   margin 5px 0
   .single__block
     input
@@ -120,21 +123,26 @@ input, textarea
   right: 0
   top: 0
   bottom: 0
-  z-index 1
+  z-index 22
   display: none
 .popup
   display: none
   position: fixed
-  top 25%
+  top 14%
   left 0
+  padding: 0 2%
   right: 0
-  z-index 10
+  z-index 25
   sm-block({
-    top: 20%
+    top: 0
   })
   .form__order
     background-color: #ffffff
     .single__block
+      .title
+        xs-block({
+          font-size: rem(16px)
+        })
       input, textarea
         border: 1px solid #cacaca
         background-color: #f6f6f6

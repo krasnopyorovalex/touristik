@@ -1,5 +1,8 @@
 .filter__panel
   margin 1em 0
+  xs-block({
+    margin: 1em
+  })
   .filter__block, .filter__block-price
     border-bottom: 1px solid #6a6a6a
     padding 0 0 1em 0
@@ -61,7 +64,6 @@
       > div
         col()
         size(6)
-        size-xs(12)
         &:last-child
           text-align: right
         label, input
@@ -78,6 +80,9 @@
   margin 1em 0
   display: block
   text-align: right
+  md-block({
+    text-align: center
+  })
   .label
     display: inline-block
     font-size: rem(16px)
@@ -87,6 +92,9 @@
     .single__block
       display: inline-block
       margin 0 0 0 1em
+      md-block({
+        margin: 5px 0 0 0
+      })
     select
       outline none
       appearance: none

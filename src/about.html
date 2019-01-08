@@ -30,7 +30,7 @@
         <div class="top__line">
             <div class="container">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-3">
                         <div class="phone">
                             <svg class="icon">
                                 <use xlink:href="./img/symbols.svg#phone"></use>
@@ -38,7 +38,7 @@
                             <a href="#">+7 (495) 664-94-42</a>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="address">
                             <svg class="icon">
                                 <use xlink:href="./img/symbols.svg#map"></use>
@@ -46,11 +46,9 @@
                             Москва, Варшавское шоссе 16, офис 135
                         </div>
                     </div>
-                    <div class="col-7">
+                    <div class="col-5">
                         <div class="search__socials-icons">
-                            <svg class="icon search">
-                                <use xlink:href="./img/symbols.svg#search"></use>
-                            </svg>
+                            <div class="btn call__popup">Перезвонить нам</div>
                             <div class="delimiter"></div>
                             <a href="#">
                                 <svg class="icon vk">
@@ -89,12 +87,16 @@
                         <ul class="header__nav">
                             <li class="logo"><a href="/"><img src="./img/logo.png" alt="logo"></a></li>
                             <li><a href="/">Главная</a></li>
-                            <li class="active"><a href="/about.html">О нас</a></li>
-                            <li><a href="/catalog.html">Туры</a></li>
+                            <li><a href="/about.html">О нас</a></li>
+                            <li class="active"><a href="/catalog.html">Туры</a></li>
                             <li><a href="#">Отзывы</a></li>
                             <li><a href="/articles.html">Блог</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>
+                        <div class="call__popup call__btn visible__sm"></div>
+                        <div class="burger-mob visible__sm">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,12 +117,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <ul class="breadcrumbs">
+                        <li><a href="/">Главная</a></li>
+                        <li>О нас</li>
+                    </ul>
                     <div class="seo__text">
-
-                        <ul class="breadcrumbs">
-                            <li><a href="/">Главная</a></li>
-                            <li>О нас</li>
-                        </ul>
 
                         <div class="title">Невероятная Африка</div>
 
@@ -362,7 +363,7 @@
                         <a href="tel:+74956649442">+7 (495) 664-94-42</a>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 right">
                     <form action="" class="search">
                         <div class="single__block">
                             <input type="text" placeholder="Введите текст ...">
@@ -371,6 +372,7 @@
                             </svg>
                         </div>
                     </form>
+                    <div class="btn call__popup">Перезвонить нам</div>
                     <div class="socials">
                         <a href="#">
                             <svg class="icon vk">
@@ -407,6 +409,46 @@
             </div>
         </div>
     </footer>
+
+    <div class="mobile__menu">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/about.html">О нас</a></li>
+            <li class="active"><a href="/catalog.html">Туры</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="/articles.html">Блог</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <div class="socials">
+            <a href="#">
+                <svg class="icon vk">
+                    <use xlink:href="./img/symbols.svg#vk"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon fb">
+                    <use xlink:href="./img/symbols.svg#fb"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon ok">
+                    <use xlink:href="./img/symbols.svg#ok"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon twitter">
+                    <use xlink:href="./img/symbols.svg#twitter"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon insta">
+                    <use xlink:href="./img/symbols.svg#insta"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="close-menu-btn"></div>
+        <div class="menu-overlay-mob"></div>
+    </div>
 
     <script src="js/app.min.js"></script>
     </body>

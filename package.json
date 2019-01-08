@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "gulpfile.js",
   "dependencies": {
-    "browser-sync": "^2.18.12",
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.4.0",
@@ -15,6 +15,7 @@
     "gulp-uglify": "~1.4.2",
     "gulp.spritesmith": "^4.0.0",
     "merge-stream": "~1.0.0",
+    "natives": "^1.1.6",
     "smart-grid": "^1.1.0",
     "stylus-type-utils": "0.0.3"
   },
@@ -25,8 +26,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@babel/core": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "gulp-babel": "^8.0.0",
     "nib": "^1.1.2"
   }

@@ -12,7 +12,6 @@ const svgSprite = require("gulp-svg-sprites");
 const nib = require('nib');
 const spritesmith = require('gulp.spritesmith');
 const merge = require('merge-stream');
-const babel = require('gulp-babel');
 
 const config = {
     src: './src',

@@ -4,6 +4,18 @@ jQuery(document).ready(function() {
         'albumLabel': 'Изображение %1 из %2'
     });
 
+    var burgerMob = jQuery(".burger-mob");
+    if(burgerMob.length) {
+        var mobileMenu = jQuery(".mobile__menu"),
+            closeMenuBtn = jQuery(".close-menu-btn");
+        burgerMob.on("click", function () {
+            return mobileMenu.addClass("is__opened") && mobileMenu.fadeIn("fast");
+        });
+        closeMenuBtn.on("click", function () {
+            return mobileMenu.removeClass("is__opened") && mobileMenu.fadeOut();
+        });
+    }
+
     var slider = jQuery('.slider');
     if (slider.length) {
         slider.owlCarousel({
@@ -24,10 +36,21 @@ jQuery(document).ready(function() {
     if (anotherProducts.length) {
         anotherProducts.find(".catalog__items").owlCarousel({
             loop:true,
-            margin:20,
+            margin:10,
             nav:true,
             dots:false,
-            items: 4
+            items: 4,
+            responsive : {
+                0 : {
+                    items: 1
+                },
+                480 : {
+                    items: 2
+                },
+                768 : {
+                    items: 4
+                }
+            }
         });
     }
 
