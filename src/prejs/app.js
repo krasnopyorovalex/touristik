@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
         });
     }
 
-    var productGal = jQuery(".product__gallery-carousel");
+    var productGal = jQuery(".product__carousel");
     if (productGal.length) {
         productGal.owlCarousel({
             loop:false,
@@ -63,20 +63,55 @@ jQuery(document).ready(function() {
             dots:false,
             items: 1
         });
+
+        productGal.on('changed.owl.carousel', function(event) {
+            var index = event.item.index,
+                items = productThumbs.find(".owl-item");
+            items.removeClass("current");
+            return productThumbs.trigger('to.owl.carousel', index) && items.eq(index).addClass("current");
+        });
+
+        var productThumbs = jQuery(".product__carousel-thumbs");
+
+        productThumbs.owlCarousel({
+            items: 5,
+            margin:5,
+            nav:false,
+            dots:false,
+            responsive : {
+                0 : {
+                    items: 3
+                },
+                480 : {
+                    items: 3
+                },
+                768 : {
+                    items: 5
+                }
+            }
+        });
+        productThumbs.on('click', 'img', function() {
+            var _this = jQuery(this),
+                index = _this.attr("data-index");
+            productThumbs.find(".owl-item").removeClass("current");
+            return _this.closest(".owl-item").addClass("current") && productGal.trigger('to.owl.carousel', index);
+        });
+        productThumbs.find(".owl-item").eq(0).addClass("current");
     }
 
     jQuery("#sticker").sticky({topSpacing:0, zIndex: 20});
 
     var callPopup = jQuery(".call__popup");
     if(callPopup.length) {
-        var popup = jQuery(".popup"),
-            popupBg = jQuery(".popup__show-bg");
+        var popupBg = jQuery(".popup__show-bg");
         callPopup.on("click", function (e) {
             e.preventDefault();
+            var _this = jQuery(this),
+                popup = jQuery("#" + _this.attr("data-target"));
             return popup.fadeIn() && popupBg.show();
         });
-        popup.on("click", ".close", function () {
-            return popup.fadeOut("slow") && popupBg.fadeOut();
+        jQuery(".popup").on("click", ".close", function () {
+            return jQuery(this).closest(".popup").fadeOut("slow") && popupBg.fadeOut();
         });
     }
 
@@ -190,7 +225,10 @@ jQuery(document).ready(function() {
         });
     }
 
-    jQuery(".tabs").lightTabs();
+    var tabs = jQuery(".tabs");
+    if(tabs.length){
+        tabs.lightTabs();
+    }
 
     /*
     |-----------------------------------------------------------
@@ -210,19 +248,21 @@ jQuery(document).ready(function() {
         }
     };
 
-    formHandler("#order__service-form", Notification);
+    formHandler("#check__order-recall", Notification, true);
+    formHandler("#check__order-popup", Notification, true);
+    formHandler("#check__order", Notification);
 });
 
-function formHandler(selector, Notification, callPopup) {
+function formHandler(selector, Notification, hide) {
     return jQuery(document).on("submit", selector, function(e){
         e.preventDefault();
         var _this = jQuery(this),
             url = _this.attr('action'),
             data = _this.serialize(),
-            submitBlock = _this.find(".submit__block"),
-            agree = _this.find(".agree__block input[type=checkbox]");
+            submitBlock = _this.find(".submit"),
+            agree = _this.find(".i__agree input[type=checkbox]");
         if (agree.length && ! agree.prop("checked")) {
-            agree.parent(".agree__block").find(".error").fadeIn().delay(3000).fadeOut();
+            agree.closest(".i__agree").find(".error").fadeIn().delay(3000).fadeOut();
             return false;
         }
         return jQuery.ajax({
@@ -234,7 +274,7 @@ function formHandler(selector, Notification, callPopup) {
                 return submitBlock.addClass("is__sent");
             },
             success: function (data) {
-                if(typeof callPopup !== "undefined" && callPopup.length) {
+                if(typeof hide !== "undefined" && hide) {
                     jQuery(".popup").fadeOut("slow") && jQuery(".popup__show-bg").fadeOut();
                 }
                 Notification.notify(data.message);
@@ -245,10 +285,5 @@ function formHandler(selector, Notification, callPopup) {
 }
 
 jQuery(document).ajaxError(function () {
-    return jQuery("form .submit__block").removeClass("is__sent") && jQuery('.notify').html('<div>Произошла ошибка =(</div>').fadeIn().delay(3000).fadeOut();
+    return jQuery("form .submit").removeClass("is__sent") && jQuery('.notify').html('<div>Произошла ошибка =(</div>').fadeIn().delay(3000).fadeOut();
 });
-
-// Number.prototype.format = function(n, x) {
-//     var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
-//     return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$& ');
-// };

@@ -66,6 +66,13 @@ input[type="checkbox"]
     margin 2em 0 0 0
     display: block
 form
+  .error
+    display: none
+    position: absolute
+    margin-left: 2em
+    bottom: -2em
+    color #ebebeb
+    font-size rem(13px)
   .single__block
     position: relative
     margin 0 0 10px 0
@@ -77,6 +84,15 @@ form
       font-weight: 500
       line-height: 22px
       text-transform: uppercase
+    &.is__sent
+      button[type=submit]
+        color #4aa933
+        &:after
+          display: none
+        &:hover
+          color #4aa933
+      &:after
+        top: 8px
     &.i__agree
       input
         display: inline-block
@@ -138,6 +154,9 @@ input, textarea
   })
   .form__order
     background-color: #ffffff
+    .error
+      color: #000
+      bottom: -2.5em
     .single__block
       .title
         xs-block({

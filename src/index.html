@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-5">
                         <div class="search__socials-icons">
-                            <div class="btn call__popup">Перезвонить нам</div>
+                            <div class="btn call__popup" data-target="popup__recall">Перезвонить нам</div>
                             <div class="delimiter"></div>
                             <a href="#">
                                 <svg class="icon vk">
@@ -295,7 +295,7 @@
                     <p>Отправьте запрос и мы свяжемся с Вами в ближайшее время для обсуждения путешествия. Все пожелания будут услышаны и учтены!</p>
                 </div>
                 <div class="col-5">
-                    <form action="#" class="form__order">
+                    <form action="#" class="form__order" id="check__order">
                         <div class="single__block name">
                             <input type="text" name="name" placeholder="Имя*" autocomplete="off">
                             <i class="icon human"></i>
@@ -316,6 +316,7 @@
                             <label for="agree">
                                 Согласие на обработку персональных данных
                             </label>
+                            <p class="error">Согласитесь на обработку персональных данных</p>
                         </div>
                         <div class="single__block center submit">
                             <button type="submit" class="btn">Отправить</button>
@@ -605,7 +606,7 @@
                             </svg>
                         </div>
                     </form>
-                    <div class="btn call__popup">Перезвонить нам</div>
+                    <div class="btn call__popup" data-target="popup__recall">Перезвонить нам</div>
                     <div class="socials">
                         <a href="#">
                             <svg class="icon vk">
@@ -683,11 +684,11 @@
         <div class="menu-overlay-mob"></div>
     </div>
 
-    <div class="popup">
+    <div class="popup" id="popup__order">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="#" class="form__order">
+                    <form action="#" class="form__order" id="check__order-popup">
                         <div class="close__box" title="Закрыть форму">
                             <div class="close"></div>
                         </div>
@@ -716,6 +717,43 @@
                                 <input type="checkbox" name="agree" id="agree2" checked="checked">
                                 Согласие на обработку персональных данных
                             </label>
+                            <p class="error">Согласитесь на обработку персональных данных</p>
+                        </div>
+                        <div class="single__block center submit">
+                            <button type="submit" class="btn">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup__recall">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" class="form__order" id="check__order-recall">
+                        <div class="close__box" title="Закрыть форму">
+                            <div class="close"></div>
+                        </div>
+                        <div class="single__block">
+                            <div class="title">
+                                Заказ обратного звонка
+                            </div>
+                        </div>
+                        <div class="single__block name">
+                            <input type="text" name="name2" placeholder="Имя*" autocomplete="off">
+                            <i class="icon human"></i>
+                        </div>
+                        <div class="single__block phone">
+                            <input type="text" name="phone2" placeholder="Телефон*" autocomplete="off">
+                            <i class="icon phone"></i>
+                        </div>
+                        <div class="single__block i__agree">
+                            <label for="agree3">
+                                <input type="checkbox" name="agree" id="agree3" checked="checked">
+                                Согласие на обработку персональных данных
+                            </label>
+                            <p class="error">Согласитесь на обработку персональных данных</p>
                         </div>
                         <div class="single__block center submit">
                             <button type="submit" class="btn">Отправить</button>
@@ -726,6 +764,9 @@
         </div>
     </div>
     <div class="popup__show-bg"></div>
+    <div class="notify">
+        <div>Ваша заявка отправлена! Мы с Вами свяжемся в ближайшее время</div>
+    </div>
 
     <script src="js/app.min.js"></script>
     </body>
