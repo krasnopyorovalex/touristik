@@ -56,6 +56,9 @@ img
      .btn
        color #ffffff
        margin 2em 0 0 0
+       &:hover {
+         color: #000
+       }
   .owl-dots
     z-index 12
     right: 0
@@ -102,25 +105,42 @@ img
         height: 45px
         font-size rem(35px)
         color: #ffffff
-.btn
+.btn, .btn__go
   background-color: $mainColor
   display: inline-block
-  padding 10px 25px
+  padding 10px 55px 10px 15px
   position: relative
+  border 1px solid $mainColor
+  transition: all 300ms ease
+  .icon {
+    width: 16px
+    height: 16px
+    fill: #ffffff
+    display: inline-block
+    position: absolute
+    top: calc(50% - 8px)
+    right: 10px
+  }
   &:after
-    transition: all 300ms ease
     position: absolute
     content: ""
-    top: 4px
-    bottom: 4px
-    right: 4px
-    left: 4px
-    border: 1px solid #ffffff
-    opacity 0
+    top: 0
+    bottom: 0
+    right: 40px
+    width: 1px
+    height: 100%
+    background-color: #fff
+    transition: all 300ms ease
   &:hover
     cursor: pointer
-    &:after
-      opacity 1
+    background-color: $activeBtnBg
+    color: #000
+    &:after {
+      background-color: $mainColor
+    }
+    .icon {
+      fill: #000
+    }
 .title
   padding 0 0 1.5em 0
   margin 1em 0 .5em 0
@@ -145,45 +165,6 @@ img
   xs-block({
     font-size: rem(18px)
   })
-.gallery__box
-  display: flex
-  flex-wrap: wrap
-  margin-top: 1em
-  align-content center
-  figure
-    position: relative
-    box-sizing border-box
-    flex-basis 20%
-    xs-block({
-      flex-basis: 50%
-    })
-    &:after
-      background-color: rgba(0, 0, 0, 0.5)
-      position: absolute
-      content ""
-      top: 0
-      bottom: 0
-      right: 0
-      left: 0
-      transition: all 300ms ease
-      opacity 0
-    img
-      height: 100%
-    .icon__zoom
-      transition: all 300ms ease
-      content ""
-      position: absolute
-      top: calc(50% - 26px)
-      left: calc(50% - 26px)
-      sprite($icon_zoom)
-      opacity 0
-      z-index 10
-      cursor: pointer
-    &:hover
-      &:after
-        opacity 1
-      .icon__zoom
-        opacity 1
 section, main
   .title
     &:after
@@ -270,44 +251,15 @@ section, main
           font-size rem(14px)
       .btn__go, .call__popup
         color: #ffffff
-        background-color: $mainColor
-        padding 6px 20px
-        font-size rem(17px)
-        font-weight: 500
-        width: 50%
-        line-height: 26px
-        border: 1px solid $mainColor
+        .icon {
+          width: 22px
+          height: 22px
+          top: calc(50% - 11px)
+        }
         &:hover
           cursor: pointer
-          background-color: transparent
+          background-color: $whiteColor
           color: #000000
-      .buttons
-        display: flex
-        margin-top: 1em
-        .call__popup + .btn__go
-          border-left 1px solid #ebebeb
-          border-right 1px solid $mainColor
-          border-top-right-radius 10px
-          border-bottom-right-radius 10px
-        .call__popup
-          border-right: none
-          border-bottom-left-radius 10px
-          border-top-left-radius 10px
-        .btn__go, .call__popup
-          color: #ffffff
-          background-color: $mainColor
-          border-top: 1px solid $mainColor
-          border-bottom: 1px solid $mainColor
-          border-left: 1px solid $mainColor
-          padding 6px 0
-          font-size rem(17px)
-          font-weight: 500
-          width: 50%
-          line-height: 26px
-          &:hover
-            cursor: pointer
-            background-color: transparent
-            color: #000000
 .pagination
   text-align: center
   margin 1em 0
@@ -633,3 +585,122 @@ table th, table td
       col()
       .btn
         color #fff
+.box_catalog
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: $mainColor
+  padding: 1.2rem 1rem
+  &-list {
+    box-sizing: border-box;
+    display: none;
+    position: absolute;
+    top: 57px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: $mainColor;
+    ul {
+      margin: 0;
+      list-style: none;
+      li {
+        position: relative;
+        border-top: 1px solid $whiteColor;
+        a {
+          display: block;
+          padding: .8rem 3rem .8rem 1.2rem;
+          text-transform: none;
+          text-align: left;
+          color: $whiteColor;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        span {
+          box-sizing: border-box;
+          position: absolute;
+          z-index: 10;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          padding: .8em 1em;
+          border-left: 1px solid $whiteColor;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        ul {
+          display: none;
+          li {
+            a {
+              position: relative;
+              padding: .5rem 0 .5rem 2.2rem;
+              font-size: rem(14px);
+              &:before {
+                content: "";
+                position: absolute;
+                top: calc(50% - 3px);
+                left: 1.2rem;
+                width: 6px;
+                height: 6px;
+                transition: all 300ms ease;
+                border-radius: 50%;
+                background-color: $whiteColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn_catalog
+    color: #272727
+    &:hover
+      cursor: pointer
+  .btn_toggle
+    margin: 0 0 0 auto
+    &:hover
+      cursor: pointer;
+.btn_toggle
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 38px;
+  height: 14px;
+  text-align: left;
+  margin: 0 0 0 auto;
+  &:after
+    right: 0;
+    bottom: 0;
+  span
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 80%;
+    height: 2px;
+    transition: all 300ms ease;
+    background-color: #272727;
+  &:before, &:after
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transition: all 300ms ease;
+    background-color: #272727;
+  &.is_open
+    span
+      display: none
+    &:after
+      top: 40%;
+      right: 0;
+      transform: rotate(-45deg)
+    &:before
+      top: 40%;
+      transform: rotate(45deg)
+.icon_arrow {
+  sprite($icon_arrow_menu_down_white);
+}

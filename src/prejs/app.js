@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
         });
     }
 
-    var maskPhone = jQuery("form input.phone__mask");
+    var maskPhone = jQuery("form input.phone_field");
     if (maskPhone.length) {
         maskPhone.mask('+0 (000) 000-00-00', {placeholder: "+_ (___) ___-__-__"});
     }
@@ -252,6 +252,18 @@ jQuery(document).ready(function() {
     lightbox.option({
         'albumLabel': 'Изображение %1 из %2'
     });
+
+    var boxCatalog = jQuery('.box_catalog');
+    if (boxCatalog.length) {
+        var btnToggle = jQuery('.btn_toggle');
+        boxCatalog.on('click', '.btn_catalog,.btn_toggle', function () {
+            return btnToggle.toggleClass('is_open') && boxCatalog.find('.box_catalog-list').slideToggle();
+        });
+
+        boxCatalog.on('click', 'ul li span', function () {
+            return jQuery(this).next('ul').slideToggle();
+        });
+    }
 
     /*
     |-----------------------------------------------------------

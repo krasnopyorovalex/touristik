@@ -73,7 +73,7 @@ input[type="checkbox"]
       textarea
         height: 100px
   .single__block
-    .icon
+    >.icon
       position: absolute
       top: 18px
       left: 16px
@@ -85,12 +85,17 @@ input[type="checkbox"]
     .btn
       font-size: rem(17px)
       color: #ffffff
-      width: 200px
-      padding 15px 25px
-      &:hover
-        cursor: pointer
+      width: 180px
+      .icon {
+        width: 20px
+        height: 20px
+        top: calc(50% - 10px)
+      }
+      &:hover {
+        color: #272727
+      }
   .submit
-    margin 2em 0 0 0
+    margin 1.5em 0 0 0
     display: block
 .human
   sprite($icon_human_green)
@@ -126,6 +131,7 @@ form
       &:after
         top: 8px
     &.i__agree
+      margin 15px 0 0 0
       input
         display: inline-block
         width: 14px

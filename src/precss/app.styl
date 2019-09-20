@@ -9,9 +9,11 @@ vendor-prefixes = official
 base-font-size = 16px
 support-for-ie = false
 
-$topLineBg = #024677
+$topLineBg = #ffbd4d
 $footerBg = #024677
-$mainColor = #0797fc
+$mainColor = #ffa712
+$activeBtnBg = #fff
+$whiteColor = #fff
 
 reset()
 
@@ -35,8 +37,8 @@ a:hover,a:focus,a:visited
 p
   margin 0 0 15px 0
   text-align justify
-  font-size rem(16px)
-  line-height normal
+  font-size rem(18px)
+  line-height 30px
 h1, .as__h1, h2, .as__h2, h3, .as__h3, h4, .as__h4, h5, .as__h5
   color: #000000
   font-size: rem(40px)
@@ -170,15 +172,14 @@ figure
 .center
   text-align: center
 header
-  color #ffffff
   nav
     position: relative
-    background-color: #fff
+    background-color: $topLineBg
     width: 100%
     z-index 20
   .top__line
-    padding 12px 0
-    background-color: $topLineBg
+    padding 1rem 0
+    background-color: #ffffff
     font-size rem(14px)
     .btn
       xxs-block({
@@ -192,30 +193,43 @@ header
         })
         size-md(12)
     a
-      color #ffffff
+      color: #272727
       &:hover
         color $mainColor
     .phone
       display: inline-block
-      & + .phone
-        margin-left: 1em
-      &:hover
-        .icon
-          fill: $mainColor
+      margin-left: 1em
       .icon
         margin-right 2px
         vertical-align: top
         width: 14px
         height: 14px
+        fill: #272727
     .address
+      line-height 22px
+      color: #272727
       md-block({
         margin: 1em 0
       })
+      .box_rounded {
+        width: 24px
+        height: 24px
+        display: inline-block
+        text-align: center
+        border-radius: 50%
+        background-color: $mainColor
+        margin 0 .2rem 0 0
+        vertical-align: middle
+      }
       .icon
-        vertical-align: top
-        margin-right 2px
+        vertical-align: middle
+        line-height 24px
         width: 13px
+        fill: #ffffff
         height: 15px
+        &:hover {
+          fill: #ffffff
+        }
     .search__socials-icons
       display flex
       flex-wrap wrap
@@ -224,56 +238,36 @@ header
       md-block({
         justify-content: center
       })
-      .icon:hover
-        fill: $mainColor
-      .delimiter
-        margin 0 16px
-        width: 1px
-        align-self stretch
-        background-color: #5d5d5d
-      a + a
-        margin-left: 8px
-      .search
-        width: 17px
-        height: 17px
-      .vk
-        width: 20px
-        height: 18px
-      .fb
-        width: 20px
-        height: 16px
-      .ok
-        width: 20px
-        height: 17px
-      .insta
-        width: 16px
-        height: 15px
-      .twitter
-        width: 24px
-        height: 18px
+      .btn {
+        color: #ffffff
+        &:hover {
+          color: #000
+        }
+      }
 .header__nav
   display: flex
   flex-wrap wrap
-  justify-content: space-between
   align-items center
-  padding .5em 0
   sm-block({
     justify-content: center
   })
   >li
     display: inline-block
     position: relative
+    & + li {
+      margin 0 0 0 2rem
+    }
     &.has__child
       &:after
         position: absolute
         right: -15px
-        top: 4px
+        top: calc(50% - 5px)
         content ""
         sprite($icon_arrow_menu_down)
     >ul
       position: absolute
       min-width 240px
-      top: 30px
+      top: 58px
       left: calc(50% - 120px)
       opacity 0
       background-color: #fff
@@ -299,55 +293,56 @@ header
         visibility visible
         opacity 1
     >a
-      color: #272727
-      font-size: rem(18px)
-      font-weight: 500
+      color: #ffffff
+      font-weight 700
+      font-size: rem(14px)
       line-height: 18px
       position: relative
       text-transform: uppercase
-      padding 10px 5px
+      padding 1.2rem .2rem
+      display: inline-block
+      sm-block({
+        display: none
+      })
       &:after
         transition: all 300ms ease
         position: absolute
         content ""
-        width 10%
-        height: 2px
-        background-color: $mainColor
-        bottom: 5px
-        left 5px
+        width 60%
+        height: 3px
+        background-color: #ffffff
+        bottom: 15px
+        left 20%
         opacity 0
       img
         width: 120px
         sm-block({
           width: 90px
         })
-    &:not(.logo)
-      sm-block({
-        display: none
-      })
-    &:hover:not(.logo), &.active
+    &:hover, &.active
       > a
-        color: $mainColor
         &:after
-          width 50%
           opacity 1
 .is-sticky
   transition: all 300ms ease
   nav
     box-shadow 0 3px 7px rgba(0, 0, 0, 0.35)
 .travels
-  background-image url("../img/mountains_bg.png")
-  background-position center bottom
-  background-repeat no-repeat
   padding 2em 0
   xs-block({
     padding: 0
   })
+  img {
+    width: 286px
+    height: 210px
+    object-fit cover
+    object-position center center
+  }
   .title
     &:after
       sprite($icon_mountains)
   .row
-    .col-4
+    .col-4, .col-3
       size-xs(6)
 .travel__item-two, .travel__item
   xs-block({
@@ -367,6 +362,7 @@ header
     &:after, .btn__more, a:after
       opacity 1
 .travel__item
+  line-height 0
   position: relative
   margin-top: 2em
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.4) 34%, rgba(0, 0, 0, 0.3) 47%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%);
@@ -380,36 +376,28 @@ header
     right: 0
     left: 0
     opacity 0
-  &-name a
-    padding 5px 1em
-    z-index 10
+  &-name
     position: absolute
     bottom: 2em
     width: 100%
     text-align: center
-    color: #ffffff
-    font-size: rem(22px)
-    font-weight: 500
-    line-height: 30px
-    text-transform: uppercase
     xs-block({
       bottom: 1em
-      line-height: normal
-      font-size: rem(15px)
     })
-    &:after
-      transition: all 300ms ease
-      position: absolute
-      content ""
-      bottom: 0
-      left: calc(50% - 30px)
-      background-color: $mainColor
-      width 60px
-      height: 2px
-      opacity 0
-    &:hover:after
-      left: calc(50% - 60px)
-      width: 120px
+    a
+      position: relative
+      background-color: rgba(0,0,0,.65)
+      padding 5px 2em
+      z-index 10
+      color: #ffffff
+      font-size: rem(22px)
+      font-weight: 500
+      line-height: 30px
+      text-transform: uppercase
+      xs-block({
+        line-height: normal
+        font-size: rem(15px)
+      })
 .travel__item-two
   position: relative
   margin-top: 2em
@@ -473,8 +461,6 @@ header
     xs-block({
       margin: 1em
     })
-    p
-      line-height 22px
     a
       color: #ffffff
   .img__bg img
@@ -485,6 +471,9 @@ header
     right: 0
     bottom: 0
     top: 0
+  .btn:hover {
+    color: #000
+  }
 .begin__travel
   position: relative
   padding 2em 0 3em 0
@@ -509,7 +498,7 @@ header
     })
   .title__first, .title__second
     color: #2b2b2b
-    font-size: rem(42px)
+    font-size: rem(38px)
     font-weight: 600
     text-transform: uppercase
     xs-block({
@@ -526,104 +515,6 @@ header
     xs-block({
       margin: 1em 0 0 0
     })
-.gallery
-  .title
-    &:after
-      sprite($icon_forest)
-.guides
-  margin 2em 0
-  .row
-    .col-3
-      size-xs(6)
-  .title
-    &:after
-      sprite($icon_camp)
-  .sub__title
-    xs-block({
-      margin: 1em 0
-    })
-  .guide__item
-    overflow hidden
-    position: relative
-    margin 1em 0 0 0
-    border-bottom 2px solid #494949
-    transition: all 300ms ease
-    xs-block({
-      margin: .2em 0
-    })
-    .ava
-      position: relative
-      img
-        height: 100%
-      &:after
-        background-color: rgba(0, 0, 0, 0.5)
-        transition: all 300ms ease
-        position: absolute
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-        content ""
-        opacity 0
-    &:hover
-      cursor: pointer
-      border-bottom 2px solid $mainColor
-      .ava:after
-        opacity 1
-    .info
-      min-height 120px
-      clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%)
-      text-align: center
-      background-color: #ebebeb
-      position: absolute
-      bottom: 0
-      right: -1%
-      left: -1%
-      padding 1em 1em 0 1em
-      display: flex
-      flex-wrap wrap
-      flex-direction column
-      xs-block({
-        min-height: auto
-      })
-      .name
-        color: #000000
-        margin 2em 0 0 0
-        font-size: rem(20px)
-        font-weight: 400
-        position: relative
-        line-height: 20px
-        text-transform: uppercase
-        xs-block({
-          font-size: rem(18px)
-          line-height: normal
-          margin: auto 0 10px 0
-        })
-        &:after
-          transition: all 300ms ease
-          position: absolute
-          content ""
-          width 20px
-          height: 3px
-          background-color: $mainColor
-          bottom: -5px
-          left calc(50% - 10px)
-          opacity 0
-        &:hover:after
-          opacity 1
-          left calc(50% - 25px)
-          width 50px
-      .text
-        margin auto 0 0 0
-        xs-block({
-          display: none
-        })
-      .text, .text p
-        text-align: center
-        color: #000000
-        font-size: rem(14px)
-        font-weight: 400
-        line-height: 20px
 .counts
   background-image url("../img/counts_bg.jpg")
   background-repeat no-repeat
@@ -699,23 +590,9 @@ main, .info__text
         top: 9px
         border-radius 50%
         background-color: $mainColor
-  a:not(.btn):not(.show__tour):not(.btn__more):not(.prev__item):not(.next__item)
-    position: relative
-    &:after
-      position: absolute
-      transition: all 300ms ease
-      content ""
-      bottom: -1px
-      left: 0
-      height 1px
-      width: 10%
-      background-color: $mainColor
-      opacity 0
+  a
     &:hover:after
-      opacity 1
-      width: 100%
-  p
-    line-height: 22px
+      text-decoration: underline
 main
   min-height: 58vh
   .seo__text
@@ -723,12 +600,10 @@ main
       ul
         margin: 0
 .seo
-  background-image: url("../img/seo_bg.png")
-  background-repeat no-repeat
-  background-size cover
   padding 0 0 2em 0
-  p
-    line-height: 22px
+  p {
+    line-height 30px
+  }
   &__text
     padding 1em 2em
     background-color: rgba(255,255,255,.5)
@@ -737,23 +612,10 @@ main
       margin: 0
       padding: 1em
     })
-    a:not(.btn):not(.show__tour):not(.btn__more)
+    a
       position: relative
-      &:after
-        position: absolute
-        transition: all 300ms ease
-        content ""
-        bottom: -1px
-        left: 0
-        height 1px
-        width: 10%
-        background-color: $mainColor
-        opacity 0
-      &:hover:after
-        opacity 1
-        width: 100%
-    p
-      line-height 22px
+      &:hover
+        text-decoration: underline
   .title
     md-block({
       margin: 0 0 1em 0

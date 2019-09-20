@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-        <title>Сайт для туристов</title>
+        <title>Море ламината - Симферополь</title>
         <link rel="stylesheet" href="css/app.min.css">
+        <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
     </head>
     <body>
     <div class="debug">
@@ -38,56 +39,50 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <div class="phone">
-                            <svg class="icon">
-                                <use xlink:href="./img/symbols.svg#phone"></use>
-                            </svg>
-                            <a href="#">+7 (495) 664-94-42</a>
-                        </div>
-                        <div class="phone">
-                            <svg class="icon">
-                                <use xlink:href="./img/symbols.svg#phone"></use>
-                            </svg>
-                            <a href="#">+7 (495) 664-94-42</a>
+                        <div class="logo">
+                            <a href="/">
+                                <img src="./img/logo.png" alt="">
+                            </a>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-7">
                         <div class="address">
-                            <svg class="icon">
-                                <use xlink:href="./img/symbols.svg#map"></use>
-                            </svg>
-                            Москва, Варшавское шоссе 16, офис 135
+                            <span class="box_rounded">
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#map"></use>
+                                </svg>
+                            </span>
+                            г. Симферополь, проспект победы 209Н
+                            <div class="phone">
+                                <a href="#">
+                                    <span class="box_rounded">
+                                        <svg class="icon">
+                                            <use xlink:href="./img/symbols.svg#phone"></use>
+                                        </svg>
+                                    </span>
+                                    +7(978) 706-50-92 Ярослава
+                                </a>
+                            </div>,
+                            <div class="phone">
+                                <a href="#">
+                                    <span class="box_rounded">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#phone"></use>
+                                    </svg>
+                                    </span>
+                                    +7(978) 706-50-93 Владимир
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-2">
                         <div class="search__socials-icons">
-                            <div class="btn call__popup" data-target="popup__recall">Перезвонить нам</div>
-                            <div class="delimiter"></div>
-                            <a href="#">
-                                <svg class="icon vk">
-                                    <use xlink:href="./img/symbols.svg#vk"></use>
+                            <div class="btn call__popup" data-target="popup__recall">
+                                Перезвонить нам
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#call"></use>
                                 </svg>
-                            </a>
-                            <a href="#">
-                                <svg class="icon fb">
-                                    <use xlink:href="./img/symbols.svg#fb"></use>
-                                </svg>
-                            </a>
-                            <a href="#">
-                                <svg class="icon ok">
-                                    <use xlink:href="./img/symbols.svg#ok"></use>
-                                </svg>
-                            </a>
-                            <a href="#">
-                                <svg class="icon twitter">
-                                    <use xlink:href="./img/symbols.svg#twitter"></use>
-                                </svg>
-                            </a>
-                            <a href="#">
-                                <svg class="icon insta">
-                                    <use xlink:href="./img/symbols.svg#insta"></use>
-                                </svg>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -96,23 +91,48 @@
         <nav id="sticker">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <ul class="header__nav">
-                            <li class="logo"><a href="/"><img src="./img/logo.png" alt="logo"></a></li>
-                            <li><a href="/">Главная</a></li>
-                            <li><a href="/about.html">О нас</a></li>
-                            <li class="active has__child">
-                                <a href="/catalog.html">Туры</a>
+                    <div class="col-3">
+                        <div class="box_catalog">
+                            <div class="btn_catalog">
+                                каталог товаров
+                            </div>
+                            <div class="btn_toggle">
+                                <span></span>
+                            </div>
+                            <div class="box_catalog-list">
                                 <ul>
-                                    <li><a href="#">Однодневные туры</a></li>
-                                    <li><a href="#">Многодневные туры</a></li>
-                                    <li><a href="#">Индивидуальные туры</a></li>
-                                    <li><a href="#">Морские туры на каяках</a></li>
-                                    <li><a href="#">Походы со спусками дюльфером</a></li>
+                                    <li>
+                                        <a href="#">Саженцы деревьев</a>
+                                        <span><i class="icon icon_arrow"></i></span>
+                                        <ul>
+                                            <li><a href="#">Саженцы абрикоса</a></li>
+                                            <li><a href="#">Саженцы алычи</a></li>
+                                            <li><a href="#">Саженцы айвы</a></li>
+                                            <li><a href="#">Саженцы вишни</a></li>
+                                            <li><a href="#">Саженцы груши</a></li>
+                                            <li><a href="#">Саженцы кизила</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Саженцы винограда</a>
+                                        <span><i class="icon icon_arrow"></i></span>
+                                        <ul>
+                                            <li><a href="#">Виноград Азалия</a></li>
+                                            <li><a href="#">Виноград Аксинья</a></li>
+                                            <li><a href="#">Виноград Алексеевич</a></li>
+                                            <li><a href="#">Виноград Армани</a></li>
+                                            <li><a href="#">Виноград Ливия</a></li>
+                                            <li><a href="#">Виноград Киш-миш</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
-                            </li>
-                            <li><a href="#">Отзывы</a></li>
-                            <li><a href="/articles.html">Блог</a></li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <ul class="header__nav">
+                            <li><a href="/"> Доставка и оплата</a></li>
+                            <li><a href="/about.html">Блог</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>
                         <div class="call__popup call__btn visible__sm"></div>
@@ -127,7 +147,7 @@
 
     <section>
         <div class="owl-carousel owl-theme slider">
-            <div class="item" style="background-image: url('./img/slider-01.jpg')">
+            <div class="item" style="background-image: url('./img/slider_01.jpg')">
                 <div class="container">
                     <div class="row">
                         <div class="col-6">
@@ -137,7 +157,12 @@
                                 </div>
                                 <div class="name">Давайте наслаждаться чудесами природы вместе!</div>
                                 <div class="desc">У нас вы найдете самые удивительные и запоминающие туры для любого путешественника.</div>
-                                <a class="btn" href="#">Подробнее</a>
+                                <a class="btn" href="#">
+                                    Подробнее
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#arrow"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                         <div class="col-6">
@@ -156,7 +181,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item" style="background-image: url('./img/slider-02.jpg')">
+            <div class="item" style="background-image: url('./img/slider_02.jpg')">
                 <div class="container">
                     <div class="row">
                         <div class="col-6">
@@ -166,7 +191,12 @@
                                 </div>
                                 <div class="name">Давайте наслаждаться чудесами природы вместе!</div>
                                 <div class="desc">У нас вы найдете самые удивительные и запоминающие туры для любого путешественника.</div>
-                                <a class="btn" href="#">Подробнее</a>
+                                <a class="btn" href="#">
+                                    Подробнее
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#arrow"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                         <div class="col-6">
@@ -185,7 +215,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item" style="background-image: url('./img/slider-03.jpg')">
+            <div class="item" style="background-image: url('./img/slider_03.jpg')">
                 <div class="container">
                     <div class="row">
                         <div class="col-6">
@@ -195,7 +225,12 @@
                                 </div>
                                 <div class="name">Давайте наслаждаться чудесами природы вместе!</div>
                                 <div class="desc">У нас вы найдете самые удивительные и запоминающие туры для любого путешественника.</div>
-                                <a class="btn" href="#">Подробнее</a>
+                                <a class="btn" href="#">
+                                    Подробнее
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#arrow"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                         <div class="col-6">
@@ -222,7 +257,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="title">
-                        Какие путешествия тебе нужны
+                        Какие путешествия тебе нужны?
                     </div>
                     <div class="sub__title">
                         Наши услуги
@@ -230,47 +265,38 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     <div class="travel__item">
-                        <img src="./img/travel-01.jpg" alt="travel">
+                        <img src="./img/cat_01.jpg" alt="travel">
                         <div class="travel__item-name">
-                            <a href="#">Однодневные туры</a>
+                            <a href="#">Ламинат</a>
                         </div>
                         <a href="#" class="btn__more">&nbsp;</a>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <div class="travel__item">
-                        <img src="./img/travel-05.png" alt="travel">
+                        <img src="./img/cat_02.jpg" alt="travel">
                         <div class="travel__item-name">
-                            <a href="#">Многодневные туры</a>
+                            <a href="#">Винил</a>
                         </div>
                         <a href="#" class="btn__more">&nbsp;</a>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <div class="travel__item">
-                        <img src="./img/travel-03.png" alt="travel">
+                        <img src="./img/cat_03.jpeg" alt="travel">
                         <div class="travel__item-name">
-                            <a href="#">Индивидуальные туры</a>
+                            <a href="#">Паркет</a>
                         </div>
                         <a href="#" class="btn__more">&nbsp;</a>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <div class="travel__item">
-                        <img src="./img/travel-04.png" alt="travel">
+                        <img src="./img/cat_04.jpg" alt="travel">
                         <div class="travel__item-name">
-                            <a href="#">Морские туры на каяках</a>
-                        </div>
-                        <a href="#" class="btn__more">&nbsp;</a>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="travel__item">
-                        <img src="./img/travel-05.png" alt="travel">
-                        <div class="travel__item-name">
-                            <a href="#">Походы со спусками дюльфером</a>
+                            <a href="#">Подложка</a>
                         </div>
                         <a href="#" class="btn__more">&nbsp;</a>
                     </div>
@@ -288,9 +314,13 @@
                     <div class="text">
                         <p>Бравый Турист это многолетний опыт походов и несколько десятков инструкторов – опытных путешественников из Санкт-Петербурга, Москвы и других городов. Активный отдых в самых интересных местах - это наша специализация.Каждый год инструткоры, которых вы можете видеть на нашем сайте, отправляются в большое количество походов по самым разнообразным маршрутам по всей России и миру и рады пригласить в них всех, кто хочет отдыхать активно.</p>
                         <p>Участники наших походов - это, в основном, молодые люди и девушки, но возраст не является для нас ограничением, присоединиться к походам могут как более взрослые, так и более молодые участники.</p>
-                        <p>Мы предлагаем большое количество походов с открытым набором в группы - присоединиться можно как одному участнику, так и с друзьями. Для организованных групп от 10 человек мы готовы предложить поход по любому из имеющихся у нас на сайте маршрутов в отдельные удобные сроки.</p>
                         <div class="center">
-                            <a href="#" class="btn">Подробнее</a>
+                            <a href="#" class="btn">
+                                Подробнее
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#arrow"></use>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -309,10 +339,10 @@
             <div class="row">
                 <div class="col-7 desc">
                     <div class="title__first">
-                        Начнем путешествие?
+                        Закажи консультацию специалиста
                     </div>
                     <div class="title__second">
-                        Давай обсудим твои мечты!
+                        бесплатно!
                     </div>
                     <p>Отправьте запрос и мы свяжемся с Вами в ближайшее время для обсуждения путешествия. Все пожелания будут услышаны и учтены!</p>
                 </div>
@@ -323,7 +353,7 @@
                             <i class="icon human"></i>
                         </div>
                         <div class="single__block phone">
-                            <input type="text" name="name" placeholder="Телефон*" autocomplete="off">
+                            <input type="text" name="name" placeholder="Телефон*" class="phone_field" autocomplete="off">
                             <i class="icon phone"></i>
                         </div>
                         <div class="single__block email">
@@ -341,160 +371,14 @@
                             <p class="error">Согласитесь на обработку персональных данных</p>
                         </div>
                         <div class="single__block center submit">
-                            <button type="submit" class="btn">Отправить</button>
+                            <button type="submit" class="btn">
+                                Отправить
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#send"></use>
+                                </svg>
+                            </button>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="title">
-                        Сказочные фото наших туристов
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery__box">
-            <figure>
-                <img src="./img/gal-01.jpg" alt="">
-                <a href="./img/gal-01.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-02.jpg" alt="">
-                <a href="./img/gal-02.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-03.jpg" alt="">
-                <a href="./img/gal-03.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-04.jpg" alt="">
-                <a href="./img/gal-04.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-05.jpg" alt="">
-                <a href="./img/gal-05.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-06.jpg" alt="">
-                <a href="./img/gal-06.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-07.jpg" alt="">
-                <a href="./img/gal-07.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-10.jpg" alt="">
-                <a href="./img/gal-10.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-08.jpg" alt="">
-                <a href="./img/gal-08.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-            <figure>
-                <img src="./img/gal-09.jpg" alt="">
-                <a href="./img/gal-09.jpg" data-lightbox="gallery">
-                    <i class="icon__zoom"></i>
-                </a>
-            </figure>
-        </div>
-
-    </section>
-
-    <section class="guides">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="title">
-                        Профессионалы своего дела
-                    </div>
-                    <div class="sub__title">Наши гиды</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <div class="guide__item">
-                        <a href="#">
-                            <div class="ava">
-                                <img src="./img/guide-02.jpg" alt="alt">
-                            </div>
-                        </a>
-                        <div class="info">
-                            <a href="#" class="name">Ольга Лесова</a>
-                            <div class="text">
-                                <p>Пешие туры, поднятие в горы. Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="guide__item">
-                        <a href="#">
-                            <div class="ava">
-                                <img src="./img/guide-03.jpg" alt="alt">
-                            </div>
-                        </a>
-                        <div class="info">
-                            <div class="name">Игорь бунев</div>
-                            <div class="text">
-                                <p>Пешие туры, поднятие в горы. Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="guide__item">
-                        <a href="#">
-                            <div class="ava">
-                                <img src="./img/guide-01.jpg" alt="alt">
-                            </div>
-                        </a>
-                        <div class="info">
-                            <a href="#" class="name">Игорь бунев</a>
-                            <div class="text">
-                                <p>Пешие туры, поднятие в горы. Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="guide__item">
-                        <a href="#">
-                            <div class="ava">
-                                <img src="./img/guide-04.jpeg" alt="alt">
-                            </div>
-                        </a>
-                        <div class="info">
-                            <a href="#" class="name">Ольга Лесова</a>
-                            <div class="text">
-                                <p>Пешие туры, поднятие в горы. Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -604,19 +488,19 @@
                         <svg class="icon map">
                             <use xlink:href="./img/symbols.svg#map"></use>
                         </svg>
-                        Москва, Варшавское шоссе 16, офис 135
+                        г. Симферополь, проспект победы 209Н
                     </div>
                     <div class="contact">
                         <svg class="icon">
                             <use xlink:href="./img/symbols.svg#phone"></use>
                         </svg>
-                        <a href="tel:+74956649442">+7 (495) 664-94-42</a>
+                        <a href="#">+7(978) 706-50-92</a> - Ярослава
                     </div>
                     <div class="contact">
                         <svg class="icon">
                             <use xlink:href="./img/symbols.svg#phone"></use>
                         </svg>
-                        <a href="tel:+74956649442">+7 (495) 664-94-42</a>
+                        <a href="#">+7(978) 706-50-93</a> - Владимир
                     </div>
                 </div>
                 <div class="col-4 right">
@@ -628,39 +512,29 @@
                             </svg>
                         </div>
                     </form>
-                    <div class="btn call__popup" data-target="popup__recall">Перезвонить нам</div>
-                    <div class="socials">
-                        <a href="#">
-                            <svg class="icon vk">
-                                <use xlink:href="./img/symbols.svg#vk"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon fb">
-                                <use xlink:href="./img/symbols.svg#fb"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon ok">
-                                <use xlink:href="./img/symbols.svg#ok"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon twitter">
-                                <use xlink:href="./img/symbols.svg#twitter"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon insta">
-                                <use xlink:href="./img/symbols.svg#insta"></use>
-                            </svg>
-                        </a>
+                    <div class="btn call__popup" data-target="popup__recall">
+                        Перезвонить нам
+                        <svg class="icon">
+                            <use xlink:href="./img/symbols.svg#call"></use>
+                        </svg>
+                    </div>
+                    <div class="develop">
+                        <div class="develop__link">
+                            <a href="/" target="_blank" rel="nofollow">
+                                Создание, продвижение и <br/>техподдержка сайтов
+                            </a>
+                        </div>
+                        <div class="develop__logo">
+                            <a href="https://krasber.ru" target="_blank" rel="nofollow">
+                                <img src="./img/krasber.svg" alt="Веб-студия Красбер">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="copyright">&copy; 2018. Бравый Турист. Все права защищены.</div>
+                    <div class="copyright">&copy; 2019. Мир ламината. Все права защищены.</div>
                 </div>
             </div>
         </div>
@@ -685,33 +559,6 @@
             <li><a href="/articles.html">Блог</a></li>
             <li><a href="#">Контакты</a></li>
         </ul>
-        <div class="socials">
-            <a href="#">
-                <svg class="icon vk">
-                    <use xlink:href="./img/symbols.svg#vk"></use>
-                </svg>
-            </a>
-            <a href="#">
-                <svg class="icon fb">
-                    <use xlink:href="./img/symbols.svg#fb"></use>
-                </svg>
-            </a>
-            <a href="#">
-                <svg class="icon ok">
-                    <use xlink:href="./img/symbols.svg#ok"></use>
-                </svg>
-            </a>
-            <a href="#">
-                <svg class="icon twitter">
-                    <use xlink:href="./img/symbols.svg#twitter"></use>
-                </svg>
-            </a>
-            <a href="#">
-                <svg class="icon insta">
-                    <use xlink:href="./img/symbols.svg#insta"></use>
-                </svg>
-            </a>
-        </div>
         <div class="close-menu-btn"></div>
         <div class="menu-overlay-mob"></div>
     </div>
@@ -734,7 +581,7 @@
                             <i class="icon human"></i>
                         </div>
                         <div class="single__block phone">
-                            <input type="text" name="phone2" placeholder="Телефон*" autocomplete="off">
+                            <input type="text" name="phone2" placeholder="Телефон*" class="phone_field" autocomplete="off">
                             <i class="icon phone"></i>
                         </div>
                         <div class="single__block email">
@@ -777,7 +624,7 @@
                             <i class="icon human"></i>
                         </div>
                         <div class="single__block phone">
-                            <input type="text" name="phone2" placeholder="Телефон*" autocomplete="off">
+                            <input type="text" name="phone2" class="phone_field" placeholder="Телефон*" autocomplete="off">
                             <i class="icon phone"></i>
                         </div>
                         <div class="single__block i__agree">
@@ -788,7 +635,12 @@
                             <p class="error">Согласитесь на обработку персональных данных</p>
                         </div>
                         <div class="single__block center submit">
-                            <button type="submit" class="btn">Отправить</button>
+                            <button type="submit" class="btn">
+                                Отправить
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#send"></use>
+                                </svg>
+                            </button>
                         </div>
                     </form>
                 </div>
