@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-5">
                         <div class="search__socials-icons">
-                            <div class="btn call__popup">Перезвонить нам</div>
+                            <div class="btn call__popup" data-target="popup__recall">Перезвонить нам</div>
                             <div class="delimiter"></div>
                             <a href="#">
                                 <svg class="icon vk">
@@ -125,8 +125,15 @@
             </div>
             <div class="row">
                 <div class="col-12">
+                   <div class="text">
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, aliquam architecto commodi, delectus dignissimos dolorem doloribus exercitationem hic maiores maxime minima nemo officia quas repellendus sed vero vitae, voluptate?</p>
+                   </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-9">
                     <div class="catalog__items">
-                        <div class="catalog__items-item-two">
+                        <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
                                     <img src="./img/item-01.png" alt="">
@@ -136,23 +143,15 @@
                                 <div class="name">
                                     <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
                                 </div>
-                                <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
-                                    </div>
-                                </div>
                                 <div class="buttons">
-                                    <div class="btn__go call__popup">Заказать</div>
+                                    <div class="btn__go call__popup" data-service="Рюкзак туристический Сплав" data-target="popup__order">Заказать</div>
                                     <a href="#" class="btn__go">Подробнее</a>
                                 </div>
                             </div>
                             <div class="label__product new">Новинка!</div>
                             <div class="label__product info">1+1</div>
                         </div>
-                        <div class="catalog__items-item-two">
+                        <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
                                     <img src="./img/item-02.png" alt="">
@@ -176,7 +175,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="catalog__items-item-two">
+                        <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
                                     <img src="./img/item-01.png" alt="">
@@ -201,7 +200,7 @@
                             </div>
                             <div class="label__product info">1+1</div>
                         </div>
-                        <div class="catalog__items-item-two">
+                        <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
                                     <img src="./img/item-01.png" alt="">
@@ -225,7 +224,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="catalog__items-item-two">
+                        <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
                                     <img src="./img/item-02.png" alt="">
@@ -250,7 +249,7 @@
                             </div>
                             <div class="label__product new">Новинка!</div>
                         </div>
-                        <div class="catalog__items-item-two">
+                        <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
                                     <img src="./img/item-01.png" alt="">
@@ -284,6 +283,17 @@
                             <li><a href="#">4</a></li>
                             <li><a href="#">5</a></li>
                         </ul>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="sidebar">
+                        <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+
+                        <!-- VK Widget -->
+                        <div id="vk_groups"></div>
+                        <script type="text/javascript">
+                            VK.Widgets.Group("vk_groups", {mode: 3, width: "auto"}, 150179830);
+                        </script>
                     </div>
                 </div>
             </div>
@@ -575,11 +585,12 @@
         <div class="menu-overlay-mob"></div>
     </div>
 
-    <div class="popup">
+    <div class="popup" id="popup__recall">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="#" class="form__order">
+                    <form action="#" class="form__order" id="check__order-popup">
+                        <input type="hidden" name="service">
                         <div class="close__box" title="Закрыть форму">
                             <div class="close"></div>
                         </div>
@@ -593,7 +604,7 @@
                             <i class="icon human"></i>
                         </div>
                         <div class="single__block phone">
-                            <input type="text" name="phone2" placeholder="Телефон*" autocomplete="off">
+                            <input type="text" name="phone2" class="phone__mask">
                             <i class="icon phone"></i>
                         </div>
                         <div class="single__block email">
@@ -608,6 +619,7 @@
                                 <input type="checkbox" name="agree" id="agree2" checked="checked">
                                 Согласие на обработку персональных данных
                             </label>
+                            <p class="error">Согласитесь на обработку персональных данных</p>
                         </div>
                         <div class="single__block center submit">
                             <button type="submit" class="btn">Отправить</button>
@@ -617,8 +629,9 @@
             </div>
         </div>
     </div>
-    <div class="popup__show-bg"></div>
+    <div class="popup__show-bg"></div><div class="notify"></div>
 
+    <script src="js/jquery.3.3.1.min.js"></script>
     <script src="js/app.min.js"></script>
     </body>
 </html>

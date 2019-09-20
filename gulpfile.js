@@ -50,11 +50,9 @@ gulp.task('build', function () {
             .pipe(gcmq())
             .pipe(autoprefixer({
                 browsers: ['> 0.1%'],
-                cascade: false
+                cascade: true
             }))
-            .pipe(cleanCSS({
-                level: 2
-            }))
+            .pipe(cleanCSS())
             .pipe(rename({suffix: '.min'}))
             .pipe(gulp.dest(config.src + config.css.dest))
             .pipe(browserSync.reload({

@@ -1,9 +1,5 @@
 jQuery(document).ready(function() {
 
-    lightbox.option({
-        'albumLabel': 'Изображение %1 из %2'
-    });
-
     var burgerMob = jQuery(".burger-mob");
     if(burgerMob.length) {
         var mobileMenu = jQuery(".mobile__menu"),
@@ -14,6 +10,21 @@ jQuery(document).ready(function() {
         closeMenuBtn.on("click", function () {
             return mobileMenu.removeClass("is__opened") && mobileMenu.fadeOut();
         });
+        mobileMenu.on("click", ".has__child > span", function (e) {
+            e.preventDefault();
+            var _this = jQuery(this);
+            if( _this.next('ul').is(':hidden') ) {
+                _this.next('ul').slideDown();
+            } else {
+                _this.next('ul').slideUp();
+            }
+            return false;
+        });
+    }
+
+    var maskPhone = jQuery("form input.phone__mask");
+    if (maskPhone.length) {
+        maskPhone.mask('+0 (000) 000-00-00', {placeholder: "+_ (___) ___-__-__"});
     }
 
     var slider = jQuery('.slider');
@@ -35,7 +46,7 @@ jQuery(document).ready(function() {
     var anotherProducts = jQuery(".another__products");
     if (anotherProducts.length) {
         anotherProducts.find(".catalog__items").owlCarousel({
-            loop:true,
+            loop:false,
             margin:10,
             nav:true,
             dots:false,
@@ -72,11 +83,10 @@ jQuery(document).ready(function() {
         });
 
         var productThumbs = jQuery(".product__carousel-thumbs");
-
         productThumbs.owlCarousel({
-            items: 5,
+            items: 6,
             margin:5,
-            nav:false,
+            nav:true,
             dots:false,
             responsive : {
                 0 : {
@@ -99,15 +109,18 @@ jQuery(document).ready(function() {
         productThumbs.find(".owl-item").eq(0).addClass("current");
     }
 
-    jQuery("#sticker").sticky({topSpacing:0, zIndex: 20});
-
     var callPopup = jQuery(".call__popup");
     if(callPopup.length) {
         var popupBg = jQuery(".popup__show-bg");
         callPopup.on("click", function (e) {
             e.preventDefault();
             var _this = jQuery(this),
-                popup = jQuery("#" + _this.attr("data-target"));
+                popup = jQuery("#" + _this.attr("data-target")),
+                service = _this.attr("data-service");
+            if(typeof service !== 'undefined' && service.length){
+                popup.find('input[name=service]').val(service);
+            }
+
             return popup.fadeIn() && popupBg.show();
         });
         jQuery(".popup").on("click", ".close", function () {
@@ -230,6 +243,16 @@ jQuery(document).ready(function() {
         tabs.lightTabs();
     }
 
+    jQuery(".loader, .loader__bg").delay(300).fadeOut('300', function() {
+        return jQuery(this).fadeOut();
+    });
+
+    jQuery("#sticker").sticky({topSpacing:0, zIndex: 20});
+
+    lightbox.option({
+        'albumLabel': 'Изображение %1 из %2'
+    });
+
     /*
     |-----------------------------------------------------------
     |   notification
@@ -251,6 +274,7 @@ jQuery(document).ready(function() {
     formHandler("#check__order-recall", Notification, true);
     formHandler("#check__order-popup", Notification, true);
     formHandler("#check__order", Notification);
+    formHandler("#check__guestbook", Notification);
 });
 
 function formHandler(selector, Notification, hide) {

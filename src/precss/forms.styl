@@ -1,4 +1,5 @@
 .styled__checkbox, .filter__block
+  z-index 10
   label
     display: inline-block
     vertical-align: middle
@@ -22,7 +23,7 @@ input[type="checkbox"]
   width: auto
   height: auto
   &:checked + label:before
-    background-color: #4aa933
+    background-color: $mainColor
   &:checked + label:after
     box-sizing border-box
     position: absolute
@@ -37,12 +38,40 @@ input[type="checkbox"]
   padding: 1.8em
   margin 0 auto
   max-width: 360px
+  position: relative
   md-block({
     margin: 1em auto 0 auto
   })
   xs-block({
     margin: 1em .4em
   })
+  &:after
+    position: absolute
+    content ""
+    border: 1px solid rgba(255,255,255,.4)
+    top: .5em
+    bottom: .5em
+    left: .5em
+    right: .5em
+    z-index 0
+  &.guestbook
+    .single__block
+      .title
+        margin: 0
+        color #fff
+        font-size rem(17px)
+        &:after
+          border-bottom 1px solid rgba(255,255,255,.4)
+          background: none
+          width: 100%
+          left: 0
+          bottom: -.2em
+      .sub__title
+        text-transform: none
+        color #fff
+        font-size rem(14px)
+      textarea
+        height: 100px
   .single__block
     .icon
       position: absolute
@@ -53,8 +82,6 @@ input[type="checkbox"]
       sprite($icon_phone_mail)
     .phone
       sprite($icon_phone_green)
-    .human
-      sprite($icon_human_green)
     .btn
       font-size: rem(17px)
       color: #ffffff
@@ -65,6 +92,8 @@ input[type="checkbox"]
   .submit
     margin 2em 0 0 0
     display: block
+.human
+  sprite($icon_human_green)
 form
   .error
     display: none
@@ -74,6 +103,7 @@ form
     color #ebebeb
     font-size rem(13px)
   .single__block
+    z-index 10
     position: relative
     margin 0 0 10px 0
     .title
@@ -84,13 +114,15 @@ form
       font-weight: 500
       line-height: 22px
       text-transform: uppercase
+      &:after
+        display: none
     &.is__sent
       button[type=submit]
-        color #4aa933
+        color $mainColor
         &:after
           display: none
         &:hover
-          color #4aa933
+          color $mainColor
       &:after
         top: 8px
     &.i__agree
@@ -172,6 +204,7 @@ input, textarea
     display: block
     position: relative
     width: 100%
+    z-index 20
     .close
       padding 5px
       position: absolute
@@ -186,3 +219,7 @@ input, textarea
   right: 15px
   top: 18px
   position: absolute
+form
+  .i__agree
+    input[type=checkbox]
+      padding: 7px

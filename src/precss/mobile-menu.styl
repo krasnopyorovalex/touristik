@@ -31,20 +31,47 @@
   sprite($icon_call__btn)
 .mobile__menu
   display: none
-  li
-    margin 8px 0
+  background-color: #373737
+  position fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 5em
+  z-index 30
+  padding 1em 0
+  ul > li
     display: block
-    border-bottom: 1px solid #2F4F4F
+    position: relative
+    overflow hidden
+    &.has__child
+      >span
+        position: absolute
+        right: 0
+        top: 0
+        padding .75em 1em
+        border-left 1px solid #2f4f4f
+        .icon__arrow
+          display: inline-block
+          sprite($icon_arrow_menu_mob_down)
+      ul
+        display: none
+        li
+          &:last-child
+            border none
+          a
+            padding-left: 2.5em
+            font-size rem(12px)
     a
-      padding 8px 5px
+      border-bottom: 1px solid #2F4F4F
+      padding 12px 1.5em
       text-transform: uppercase
       display: block
       color #ffffff
   .socials
-    margin 2em 0 0 5px
+    margin 2em 0 0 1.5em
     text-align: left
     > a + a
-      margin-left: 1em
+      margin-left: .8em
     .vk
       width: 20px
       height: 18px
@@ -61,14 +88,6 @@
       width: 24px
       height: 18px
   &.is__opened
-    background-color: #373737
-    position fixed
-    top: 0
-    right: 0
-    bottom: 0
-    left: 5em
-    z-index 30
-    padding 2em
     .menu-overlay-mob
       opacity 1;
 .menu-overlay-mob

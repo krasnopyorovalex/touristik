@@ -32,7 +32,7 @@ img
       position: relative
     .owl-text
      .sub, .desc
-        color: #5ac840
+        color: $mainColor
         font-size: rem(18px)
         font-weight: 600
         line-height: 18px
@@ -103,7 +103,7 @@ img
         font-size rem(35px)
         color: #ffffff
 .btn
-  background-color: #4aa933
+  background-color: $mainColor
   display: inline-block
   padding 10px 25px
   position: relative
@@ -131,12 +131,13 @@ img
   line-height: 20px
   position: relative
   xs-block({
+    line-height: 25px
     font-size: rem(26px)
   })
 .sub__title
   margin 1em 0 0 0
   text-align: center
-  color: #4aa933
+  color: $mainColor
   font-size: rem(20px)
   font-weight: 500
   line-height: 20px
@@ -147,7 +148,7 @@ img
 .gallery__box
   display: flex
   flex-wrap: wrap
-  margin: 1em 0
+  margin-top: 1em
   align-content center
   figure
     position: relative
@@ -191,7 +192,7 @@ section, main
       position: absolute
       content ""
 .title__section
-  background-color: #4aa933
+  background-color: $mainColor
   text-align: center
   background-image url("../img/pattern.jpg")
   background-repeat repeat
@@ -199,19 +200,27 @@ section, main
     color #ffffff
 .hidden
   display: none
-.catalog__items, .catalog__items-two
-  margin-top 1em
+.catalog, .single__tour
+  .row
+    .col-9, .col-3, .col-7, .col-5
+      size-md(12)
+.catalog__items
   margin-bottom 1em
   row-flex()
-  &-item, &-item-two
+  xs-block({
+    padding: 0 1em
+  })
+  &-item
     position: relative
-    margin-top 1em
+    margin-bottom: 1em
     text-align: center
     background-color: #ebebeb
+    transition: all 300ms ease
     padding 0 0 1em 0
     col()
     size(4)
     size-md(6)
+    size-sm(12)
     size-xxs(12)
     display: flex
     flex-direction column
@@ -225,17 +234,16 @@ section, main
       flex-grow 2
       margin 0 0 auto 0
       transition: all 300ms ease
-      padding: 2em
+      border: none
+      padding 0
       display: flex
       flex-wrap wrap
       flex-direction column
       align-items center
-      border-bottom 1px solid rgba(0,0,0,0.1)
       a
         margin auto 0
     &:hover
-      figure
-        background-color: rgba(0,0,0,.4)
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25), 0 0 2px rgba(0,0,0,0.22);
     .catalog__items-info
       padding 1em
       .name a
@@ -244,7 +252,7 @@ section, main
         font-weight: 500
         line-height: 22px
         &:hover
-          color: #4aa933
+          color: $mainColor
       .prices
         margin 2em 0
         font-weight: 500
@@ -260,47 +268,56 @@ section, main
           color: #404040
           text-decoration: line-through
           font-size rem(14px)
-      .buttons
-        display: flex
-      .call__popup + .btn__go
-        border-left 1px solid #ebebeb
-        border-right 1px solid #4aa933
-        border-top-right-radius 10px
-        border-bottom-right-radius 10px
-      .call__popup
-        border-bottom-left-radius 10px
-        border-top-left-radius 10px
       .btn__go, .call__popup
         color: #ffffff
-        background-color: #4aa933
-        border-top: 1px solid #4aa933
-        border-bottom: 1px solid #4aa933
-        border-left: 1px solid #4aa933
+        background-color: $mainColor
         padding 6px 20px
         font-size rem(17px)
         font-weight: 500
         width: 50%
         line-height: 26px
+        border: 1px solid $mainColor
         &:hover
           cursor: pointer
           background-color: transparent
           color: #000000
-  &-item-two
-    col()
-    size(3)
-    size-md(4)
-    size-sm(6)
-    size-xxs(12)
+      .buttons
+        display: flex
+        margin-top: 1em
+        .call__popup + .btn__go
+          border-left 1px solid #ebebeb
+          border-right 1px solid $mainColor
+          border-top-right-radius 10px
+          border-bottom-right-radius 10px
+        .call__popup
+          border-right: none
+          border-bottom-left-radius 10px
+          border-top-left-radius 10px
+        .btn__go, .call__popup
+          color: #ffffff
+          background-color: $mainColor
+          border-top: 1px solid $mainColor
+          border-bottom: 1px solid $mainColor
+          border-left: 1px solid $mainColor
+          padding 6px 0
+          font-size rem(17px)
+          font-weight: 500
+          width: 50%
+          line-height: 26px
+          &:hover
+            cursor: pointer
+            background-color: transparent
+            color: #000000
 .pagination
   text-align: center
-  margin 2em 0 1em 0
+  margin 1em 0
   ul
     li
       display: inline-block
       &.active
-        a
-          color: #4aa933
-      a
+        a, span
+          color: $mainColor
+      a, span
         border: 1px solid #d9d6d6
         padding 5px 16px
         color: #6c6c6c
@@ -309,7 +326,7 @@ section, main
         &:after
           display: none
         &:hover
-          color: #4aa933
+          color: $mainColor
 .banners
   margin 1em 0
 .label__product
@@ -320,7 +337,7 @@ section, main
   font-size rem(16px)
   z-index 10
   &.new
-    background-color: #4aa933
+    background-color: $mainColor
   &.info
     background-color: #4c96e5
     right: 0
@@ -328,14 +345,22 @@ section, main
   .catalog__items
     margin: 2em 0 1em 0
     display: inline-block
+    .owl-nav
+      xs-block({
+        right: 12px
+      })
     &-item
-      margin: 0
-      width: 100%
+      margin-top: 0
+      margin-bottom: 0
+      width: auto
+      xs-block({
+        margin: 0 -1% 0 -1%
+      })
+      figure
+        img
+          min-height: 222px
 .catalog__items
   position: relative
-  &.owl-carousel
-    figure
-      min-height 288px
   .owl-nav
     position: absolute
     right: -5px
@@ -348,13 +373,17 @@ section, main
       &:hover
         background: none
         span
-          color #4aa933
-          border: 1px solid #4aa933
+          color $mainColor
+          border: 1px solid $mainColor
 .tabs
-  display:inline-block
-  margin 1em 0
+  margin-top: 1em
+  margin-bottom: 1em
 .tabs > div
-  padding-top:10px
+  background-color: #fff
+  > div
+    padding 1em 1em .2em 1em
+    p
+      text-align: left
 .tabs>ul
   margin:0
   padding:0
@@ -362,23 +391,21 @@ section, main
   content:""
   display: block
   clear:both
-  height:1px
-  background:#4aa933
 .tabs>ul li
   cursor:pointer;
   display:block;
   float:left;
   padding:10px 15px;
-  background: #ebebeb
+  background:#d6d6d7
   color: #2b2b2b
   + li
-    border-left: 1px solid #d6d6d7
+    border-left: 1px solid #fff
   &:first-child
     border-top-left-radius 5px
   &:last-child
     border-top-right-radius 5px
 .tabs>ul li.active, .tabs>ul li.active:hover
-  background: #4aa933
+  background: $mainColor
   color:#fff
 .tabs>ul li:hover
   background:#d6d6d7
@@ -390,21 +417,21 @@ table
 table th,table td
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #ebebeb
+  border-top: 1px solid #272727
 table thead th
   vertical-align: bottom;
-  border-bottom: 2px solid #ebebeb
+  //border-bottom: 2px solid #272727
 table tbody + tbody
-  border-top: 2px solid #ebebeb
+  border-top: 2px solid #272727
 table th, table td
-  border: 1px solid #ebebeb
+  border: 1px solid #272727
 .notify
   position: fixed
   display: none
   right: 0
   top: 20%
   width: 320px
-  border-top 3px solid #4aa933
+  border-top 3px solid $mainColor
   box-shadow 0 1px 4px #373737
   background-color: #ebebeb
   z-index 30
@@ -437,7 +464,7 @@ table th, table td
   button[type=submit]
     color #ffffff
     &:hover
-      color #4aa933
+      color $mainColor
 @-webkit-keyframes load8
   0%
     transform: rotate(0deg)
@@ -448,3 +475,161 @@ table th, table td
     transform: rotate(0deg)
   100%
     transform: rotate(360deg)
+@keyframes animate-circle
+  from
+    transform: scale(0)
+    opacity: 1
+  to
+    transform: scale(1)
+    opacity: 0
+.icon__calendar
+  display: inline-block
+  sprite($icon_calendar)
+.prev__item
+  text-align: right
+  &:after
+    left: -5em
+    sm-block({
+      top: 0
+    })
+  &:before
+    left: -5em
+    sm-block({
+      top: 4px
+      left: -35px
+    })
+.next__item
+  text-align: left
+  &:after
+    transform rotate(180deg)
+    right: -5em
+    sm-block({
+      top: 0
+    })
+  &:before
+    transform rotate(180deg)
+    right: -5em
+    sm-block({
+      top: 4px
+      right: -35px
+    })
+.navigation
+  margin 1em 0
+  .row
+    align-items center
+    .col-only-6
+      col()
+      size(6)
+.prev__item, .next__item
+  font-weight: 400
+  color #000
+  text-transform: uppercase
+  position: relative
+  display: inline-block
+  transition none
+  padding 2em 0
+  max-width: 300px
+  md-block({
+    font-size: rem(12px)
+    max-width: 180px
+  })
+  sm-block({
+    font-size: 0
+    padding: 0
+  })
+  &:after
+    position: absolute
+    content ""
+    top: calc(50% - 25px)
+    sprite($icon_arrow_project)
+    sm-block({
+      display: none
+    })
+  &:before
+    position: absolute
+    content ""
+    top: calc(50% - 25px)
+    display: none
+    sprite($icon_arrow_project_mob)
+    sm-block({
+      display: block
+    })
+  &:hover
+    color #00cc45
+    &:after
+      sprite($icon_arrow_project_active)
+  span
+    width: 80px
+    display: none
+    sm-block({
+      display: inline-block
+    })
+    &:before
+      content: attr(data-text)
+      sm-block({
+        font-size: rem(12px)
+      })
+.responsive
+  max-width 320px
+  margin 0 1em 1em 0
+  float: left
+  xs-block({
+    margin: 1em auto
+    width: 100%
+    float: none
+    display: block
+  })
+.table__box
+  overflow-x auto
+.order__steps
+  text-align: center
+  img
+    width: 32px
+    height: auto
+    display: block
+    margin 0 auto 4px auto
+.schedule
+  margin 1em 0
+  &__row
+    row-flex()
+    align-items center
+    & + .schedule__row
+      margin-top: 1px
+    &:nth-child(odd)
+      background-color: #ceffc1
+    &:nth-child(even)
+      background-color: #a0ed8b
+    .date, .name, .price, .order
+      padding .8em 0
+      sm-block({
+        padding: .4em 0
+      })
+    .date
+      size(2)
+      size-sm(12)
+      col()
+      text-align: center
+      sm-block({
+        text-align: center
+      })
+    .name
+      size(6)
+      size-sm(12)
+      col()
+      padding .8em 1em
+      sm-block({
+        text-align: center
+        padding: .2em 0
+      })
+    .price
+      text-align: center
+      size(2)
+      size-sm(12)
+      col()
+    .order
+      text-align: center
+      size(2)
+      size-sm(12)
+      col()
+      .btn
+        color #fff

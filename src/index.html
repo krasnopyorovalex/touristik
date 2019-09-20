@@ -26,11 +26,24 @@
         </div>
     </div>
 
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="loader__bg"></div>
+
     <header>
         <div class="top__line">
             <div class="container">
                 <div class="row">
                     <div class="col-3">
+                        <div class="phone">
+                            <svg class="icon">
+                                <use xlink:href="./img/symbols.svg#phone"></use>
+                            </svg>
+                            <a href="#">+7 (495) 664-94-42</a>
+                        </div>
                         <div class="phone">
                             <svg class="icon">
                                 <use xlink:href="./img/symbols.svg#phone"></use>
@@ -88,7 +101,16 @@
                             <li class="logo"><a href="/"><img src="./img/logo.png" alt="logo"></a></li>
                             <li><a href="/">Главная</a></li>
                             <li><a href="/about.html">О нас</a></li>
-                            <li class="active"><a href="/catalog.html">Туры</a></li>
+                            <li class="active has__child">
+                                <a href="/catalog.html">Туры</a>
+                                <ul>
+                                    <li><a href="#">Однодневные туры</a></li>
+                                    <li><a href="#">Многодневные туры</a></li>
+                                    <li><a href="#">Индивидуальные туры</a></li>
+                                    <li><a href="#">Морские туры на каяках</a></li>
+                                    <li><a href="#">Походы со спусками дюльфером</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">Отзывы</a></li>
                             <li><a href="/articles.html">Блог</a></li>
                             <li><a href="#">Контакты</a></li>
@@ -256,7 +278,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="info__text">
         <div class="container">
             <div class="row">
@@ -648,7 +670,17 @@
         <ul>
             <li><a href="/">Главная</a></li>
             <li><a href="/about.html">О нас</a></li>
-            <li class="active"><a href="/catalog.html">Туры</a></li>
+            <li class="active has__child">
+                <a href="/catalog.html">Туры</a>
+                <span><i class="icon__arrow"></i></span>
+                <ul>
+                    <li><a href="#">Однодневные туры</a></li>
+                    <li><a href="#">Многодневные туры</a></li>
+                    <li><a href="#">Индивидуальные туры</a></li>
+                    <li><a href="#">Морские туры на каяках</a></li>
+                    <li><a href="#">Походы со спусками дюльфером</a></li>
+                </ul>
+            </li>
             <li><a href="#">Отзывы</a></li>
             <li><a href="/articles.html">Блог</a></li>
             <li><a href="#">Контакты</a></li>
@@ -763,11 +795,9 @@
             </div>
         </div>
     </div>
-    <div class="popup__show-bg"></div>
-    <div class="notify">
-        <div>Ваша заявка отправлена! Мы с Вами свяжемся в ближайшее время</div>
-    </div>
+    <div class="popup__show-bg"></div><div class="notify"></div>
 
+    <script src="js/jquery.3.3.1.min.js"></script>
     <script src="js/app.min.js"></script>
     </body>
 </html>

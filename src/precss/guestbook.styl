@@ -1,0 +1,39 @@
+.guestbook__box
+  xs-block({
+    padding: 0 1em
+  })
+  .guestbook__item
+    display: inline-block
+    & + .guestbook__item
+      padding: 1em 0
+      border-top 1px solid #ccc
+    .header
+      margin-bottom: .5em
+      .date, .name
+        color: $mainColor
+        vertical-align: middle
+        padding-left: 1.5em
+        position: relative
+        display: inline-block
+        xs-block({
+          display: block
+        })
+        i
+          position: absolute
+          left: 0
+          top: 0
+      .name
+        margin-left: 2em
+        padding-left: 0
+        xs-block({
+          margin-top: 8px
+          margin-left: 1.5em
+        })
+        i
+          top: 1px
+          left: -22px
+.guestbook__list
+  .col-4
+    size-md(12)
+    size-sm(12)
+    size-xs(12)

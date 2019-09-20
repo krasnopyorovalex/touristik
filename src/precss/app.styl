@@ -9,6 +9,10 @@ vendor-prefixes = official
 base-font-size = 16px
 support-for-ie = false
 
+$topLineBg = #024677
+$footerBg = #024677
+$mainColor = #0797fc
+
 reset()
 
 //.debug
@@ -18,9 +22,11 @@ reset()
   box-sizing: border-box
 body
   font-family "Roboto Condensed"
+  position: relative
+  background-color: #fff
 a, .icon
   text-decoration:none
-  color: #4aa933
+  color: $mainColor
   cursor:pointer
   transition: all 300ms ease
 a:hover,a:focus,a:visited
@@ -60,6 +66,38 @@ h5, .as__h5
   md-block({
     font-size: rem(16px)
   })
+svg
+  width: 0
+  height: 0
+.loader__bg
+  position: fixed
+  z-index 35
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+  background-color: #fff
+.loader
+  position: fixed
+  z-index 40
+  top: 50%
+  left: 50%
+  height: 10rem
+  width: 10rem
+  transform: translateX(-50%) translateY(-50%)
+  > .circle
+    position: absolute
+    height: inherit
+    width: inherit
+    background:$mainColor
+    border-radius: 50%
+    animation: animate-circle 2s cubic-bezier(.9,.24,.62,.79) infinite
+    &:nth-of-type(1)
+      animation-delay: 0
+    &:nth-of-type(2)
+      animation-delay: calc(2s / -3)
+    &:nth-of-type(3)
+      animation-delay: calc(2s / -6)
 .not__overflow
   overflow hidden
 .container
@@ -140,7 +178,7 @@ header
     z-index 20
   .top__line
     padding 12px 0
-    background-color: #373737
+    background-color: $topLineBg
     font-size rem(14px)
     .btn
       xxs-block({
@@ -156,12 +194,14 @@ header
     a
       color #ffffff
       &:hover
-        color #4aa933
+        color $mainColor
     .phone
       display: inline-block
+      & + .phone
+        margin-left: 1em
       &:hover
         .icon
-          fill: #4aa933
+          fill: $mainColor
       .icon
         margin-right 2px
         vertical-align: top
@@ -185,7 +225,7 @@ header
         justify-content: center
       })
       .icon:hover
-        fill: #4aa933
+        fill: $mainColor
       .delimiter
         margin 0 16px
         width: 1px
@@ -220,9 +260,45 @@ header
   sm-block({
     justify-content: center
   })
-  li
+  >li
     display: inline-block
-    a
+    position: relative
+    &.has__child
+      &:after
+        position: absolute
+        right: -15px
+        top: 4px
+        content ""
+        sprite($icon_arrow_menu_down)
+    >ul
+      position: absolute
+      min-width 240px
+      top: 30px
+      left: calc(50% - 120px)
+      opacity 0
+      background-color: #fff
+      border-top 2px solid #272727
+      visibility hidden
+      transition: all 300ms ease
+      box-shadow 0 3px 7px rgba(0,0,0,.35)
+      li
+        text-align: center
+        display: block
+        &:hover
+          background-color: #ebebeb
+          a
+            color: $mainColor
+        a
+          padding 10px 15px
+          display: block
+          color #272727
+        & + li
+          border-top 1px solid #ccc
+    &:hover
+      >ul
+        visibility visible
+        opacity 1
+    >a
       color: #272727
       font-size: rem(18px)
       font-weight: 500
@@ -236,29 +312,22 @@ header
         content ""
         width 10%
         height: 2px
-        background-color: #5ac840
+        background-color: $mainColor
         bottom: 5px
         left 5px
         opacity 0
-    &.logo
-      order: 2
-      sm-block({
-        order: 0
-      })
       img
         width: 120px
         sm-block({
           width: 90px
         })
-    &:nth-of-type(n+5)
-      order: 2
     &:not(.logo)
       sm-block({
         display: none
       })
     &:hover:not(.logo), &.active
-      a
-        color: #24bb00
+      > a
+        color: $mainColor
         &:after
           width 50%
           opacity 1
@@ -280,112 +349,112 @@ header
   .row
     .col-4
       size-xs(6)
-  .travel__item-two, .travel__item
+.travel__item-two, .travel__item
+  xs-block({
+    margin: .4em
+  })
+  .btn__more
+    transition: all 300ms ease
+    content ""
+    position: absolute
+    top: calc(50% - 26px)
+    left: calc(50% - 26px)
+    sprite($icon_zoom)
+    opacity 0
+    z-index 10
+    cursor: pointer
+  &:hover
+    &:after, .btn__more, a:after
+      opacity 1
+.travel__item
+  position: relative
+  margin-top: 2em
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.4) 34%, rgba(0, 0, 0, 0.3) 47%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%);
+  &:after
+    transition: all 300ms ease
+    background-color: rgba(0, 0, 0, 0.4)
+    position: absolute
+    content ""
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    opacity 0
+  &-name a
+    padding 5px 1em
+    z-index 10
+    position: absolute
+    bottom: 2em
+    width: 100%
+    text-align: center
+    color: #ffffff
+    font-size: rem(22px)
+    font-weight: 500
+    line-height: 30px
+    text-transform: uppercase
     xs-block({
-      margin: .4em
+      bottom: 1em
+      line-height: normal
+      font-size: rem(15px)
     })
-    .btn__more
-      transition: all 300ms ease
-      content ""
-      position: absolute
-      top: calc(50% - 26px)
-      left: calc(50% - 26px)
-      sprite($icon_zoom)
-      opacity 0
-      z-index 10
-      cursor: pointer
-    &:hover
-      &:after, .btn__more, a:after
-        opacity 1
-  .travel__item
-    position: relative
-    margin-top: 2em
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.4) 34%, rgba(0, 0, 0, 0.3) 47%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%);
     &:after
       transition: all 300ms ease
-      background-color: rgba(0, 0, 0, 0.4);
       position: absolute
       content ""
-      top: 0
       bottom: 0
-      right: 0
-      left: 0
+      left: calc(50% - 30px)
+      background-color: $mainColor
+      width 60px
+      height: 2px
       opacity 0
-    &-name a
-      padding 5px 1em
-      z-index 10
-      position: absolute
-      bottom: 2em
-      width: 100%
-      text-align: center
-      color: #ffffff
-      font-size: rem(22px)
-      font-weight: 500
-      line-height: 30px
-      text-transform: uppercase
-      xs-block({
-        bottom: 1em
-        line-height: normal
-        font-size: rem(15px)
-      })
-      &:after
-        transition: all 300ms ease
-        position: absolute
-        content ""
-        bottom: 0
-        left: calc(50% - 30px)
-        background-color: #5ac840
-        width 60px
-        height: 2px
-        opacity 0
-      &:hover:after
-        left: calc(50% - 60px)
-        width: 120px
-  .travel__item-two
-    position: relative
-    margin-top: 2em
+    &:hover:after
+      left: calc(50% - 60px)
+      width: 120px
+.travel__item-two
+  position: relative
+  margin-top: 2em
+  xs-block({
+    margin: 1em
+  })
+  .travel__count
+    position: absolute
+    left: .1em
+    bottom: -.04em
+    opacity: 0.6;
+    color: #ffffff
+    font-size: rem(90px)
+    font-weight: 700
+    text-transform: uppercase
+    z-index 10
     xs-block({
-      margin: 1em
+      font-size: rem(65px)
     })
-    .travel__count
-      position: absolute
-      left: .1em
-      bottom: -.04em
-      opacity: 0.6;
-      color: #ffffff
-      font-size: rem(90px)
-      font-weight: 700
-      text-transform: uppercase
-      z-index 10
-      xs-block({
-        font-size: rem(65px)
-      })
-    img
-      height: 100%
+  img
+    height: 100%
+  &:after
+    transition: all 300ms ease
+    background-color: rgba(0, 0, 0, 0.54)
+    position: absolute
+    content ""
+    top: 0
+    bottom: 4px
+    right: 0
+    left: 0
+    opacity 0
+  &:hover
     &:after
-      transition: all 300ms ease
-      background-color: rgba(0, 0, 0, 0.54)
-      position: absolute
-      content ""
-      top: 0
-      bottom: 4px
-      right: 0
-      left: 0
-      opacity 0
-    &:hover
-      &:after
-        opacity 1
-    .travel__item-name a
-      background-color: rgba(0, 0, 0, 0.54)
-      clip-path: polygon(0 0, 0% 100%, 100% 100%);
-      padding 3em .5em 1.5em .5em
-      text-align: left
-      bottom: 4px
-      left: 0
-      z-index: 12
-      &:after
-        left: .5em
-        bottom: 1.4em
+      opacity 1
+  .travel__item-name a
+    background-color: rgba(0, 0, 0, 0.54)
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    padding 3em .5em 1.5em .5em
+    text-align: left
+    bottom: 4px
+    left: 0
+    z-index: 12
+    &:after
+      left: .5em
+      bottom: 1.4em
 .info__text
   //margin 2em 0 0 0
   .title
@@ -447,7 +516,7 @@ header
       font-size: rem(22px)
     })
   .title__second
-    color: #4aa933
+    color: $mainColor
   p
     color: #000000
     margin 2em 0 0 0
@@ -498,11 +567,11 @@ header
         opacity 0
     &:hover
       cursor: pointer
-      border-bottom 2px solid #4aa933
+      border-bottom 2px solid $mainColor
       .ava:after
         opacity 1
     .info
-      min-height 160px
+      min-height 120px
       clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%)
       text-align: center
       background-color: #ebebeb
@@ -536,7 +605,7 @@ header
           content ""
           width 20px
           height: 3px
-          background-color: #5ac840
+          background-color: $mainColor
           bottom: -5px
           left calc(50% - 10px)
           opacity 0
@@ -550,6 +619,7 @@ header
           display: none
         })
       .text, .text p
+        text-align: center
         color: #000000
         font-size: rem(14px)
         font-weight: 400
@@ -597,7 +667,7 @@ header
         content ""
         bottom: 4px
         height 4px
-        background-color: #4aa933
+        background-color: $mainColor
         width: 50px
         left calc(50% - 25px)
     .count__name
@@ -613,7 +683,7 @@ header
       text-align: center
       font-weight: 400
       line-height: 22px
-main
+main, .info__text
   ul:not(.breadcrumbs):not(.not__decorated)
     margin  0 0 15px 0
     li
@@ -628,8 +698,8 @@ main
         left: 4px
         top: 9px
         border-radius 50%
-        background-color: #4aa933
-  a:not(.btn)
+        background-color: $mainColor
+  a:not(.btn):not(.show__tour):not(.btn__more):not(.prev__item):not(.next__item)
     position: relative
     &:after
       position: absolute
@@ -639,18 +709,26 @@ main
       left: 0
       height 1px
       width: 10%
-      background-color: #4aa933
+      background-color: $mainColor
       opacity 0
     &:hover:after
       opacity 1
       width: 100%
   p
-    line-height 22px
+    line-height: 22px
+main
+  min-height: 58vh
+  .seo__text
+    .sitemap
+      ul
+        margin: 0
 .seo
   background-image: url("../img/seo_bg.png")
   background-repeat no-repeat
   background-size cover
   padding 0 0 2em 0
+  p
+    line-height: 22px
   &__text
     padding 1em 2em
     background-color: rgba(255,255,255,.5)
@@ -659,7 +737,7 @@ main
       margin: 0
       padding: 1em
     })
-    a:not(.btn)
+    a:not(.btn):not(.show__tour):not(.btn__more)
       position: relative
       &:after
         position: absolute
@@ -669,7 +747,7 @@ main
         left: 0
         height 1px
         width: 10%
-        background-color: #4aa933
+        background-color: $mainColor
         opacity 0
       &:hover:after
         opacity 1
@@ -677,6 +755,9 @@ main
     p
       line-height 22px
   .title
+    md-block({
+      margin: 0 0 1em 0
+    })
     &:after
       sprite($icon_globus)
   &.page
@@ -689,7 +770,7 @@ main
       })
     .breadcrumbs
       xs-block({
-        margin: 1em 1em 0 1em
+        margin: 1em
       })
     .title
       &:after
@@ -725,10 +806,10 @@ footer
           left: 0
           height 2px
           width: 10%
-          background-color: #5ac840
+          background-color: $mainColor
           opacity 0
         &:hover
-          color: #24bb00
+          color: $mainColor
           &:after
             width: 50%
             opacity 1
@@ -738,11 +819,11 @@ footer
     a
       color #ffffff
       &:hover
-        color: #24bb00
+        color: $mainColor
     .icon
       vertical-align: top
       margin-right: 5px
-      fill #4aa933
+      fill $mainColor
       width: 16px
       height: 16px
     .map
@@ -769,7 +850,7 @@ footer
     > a + a
       margin-left: 5px
     .icon:hover
-      fill: #24bb00
+      fill: $mainColor
     .vk
       width: 20px
       height: 18px
@@ -793,9 +874,19 @@ footer
   margin 2em 0 1em 0
   &__item
     row-flex()
+    border-right: 2px solid #ccc
+    transition: all 300ms ease
+    md-block({
+      border: none
+    })
     xs-block({
       margin: 1em
     })
+    &:hover
+      border-right: 2px solid $mainColor
+      md-block({
+        border: none
+      })
     & + &
       margin-top: 2em
     .image
@@ -807,6 +898,7 @@ footer
         margin: 0 0 1em 0
       })
       img
+        display: block
         height: 100%
     .desc
       col()
@@ -816,13 +908,19 @@ footer
       display: flex
       flex-direction column
       .date
-        color #4aa933
+        color $mainColor
+        position: relative
+        padding-left: 2em
+        .icon__calendar
+          position: absolute
+          top: 0
+          left: 0
       .name
         margin .6em 0
         color #272727
         font-size rem(22px)
         &:hover
-          color #4aa933
+          color $mainColor
           &:after
             display: none
       .btn__box
@@ -833,6 +931,10 @@ footer
   text-align: right
   xxs-block({
     text-align: center
+  })
+.text__block
+  sm-block({
+    padding: 1em
   })
 @import "404"
 @import "breadcrumbs"
@@ -846,6 +948,7 @@ footer
 @import "css/lightbox"
 @import "css/nouislider"
 @import "components"
+@import "guestbook"
 
 button
   outline none

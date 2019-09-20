@@ -19,6 +19,9 @@
     "smart-grid": "^1.1.0",
     "stylus-type-utils": "0.0.3"
   },
+  "resolutions": {
+    "natives": "1.1.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
