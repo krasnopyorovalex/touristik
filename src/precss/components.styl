@@ -121,7 +121,7 @@ img
     top: calc(50% - 8px)
     right: 10px
   }
-  &:after
+  &:before
     position: absolute
     content: ""
     top: 0
@@ -135,15 +135,14 @@ img
     cursor: pointer
     background-color: $activeBtnBg
     color: #000
-    &:after {
+    &:before {
       background-color: $mainColor
     }
     .icon {
       fill: #000
     }
 .title
-  padding 0 0 1.5em 0
-  margin 1em 0 .5em 0
+  margin 1em 0 0 0
   text-align: center
   color: #000000
   font-size: rem(30px)
@@ -173,11 +172,25 @@ section, main
       position: absolute
       content ""
 .title__section
-  background-color: $mainColor
+  padding 1rem 0
   text-align: center
-  background-image url("../img/pattern.jpg")
-  background-repeat repeat
+  background-image url("../img/page_bg.jpg")
+  background-repeat no-repeat
+  background-position center center
+  background-size cover
+  position: relative
+  &:before {
+    content ''
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    background-color: rgba(0,0,0,.25)
+    z-index 0
+  }
   h1
+    position: relative
     color #ffffff
 .hidden
   display: none
@@ -268,7 +281,8 @@ section, main
       display: inline-block
       &.active
         a, span
-          color: $mainColor
+          background-color: $mainColor
+          color: $whiteColor
       a, span
         border: 1px solid #d9d6d6
         padding 5px 16px
@@ -278,7 +292,8 @@ section, main
         &:after
           display: none
         &:hover
-          color: $mainColor
+          background-color: $mainColor
+          color: $whiteColor
 .banners
   margin 1em 0
 .label__product
@@ -291,7 +306,7 @@ section, main
   &.new
     background-color: $mainColor
   &.info
-    background-color: #4c96e5
+    background-color: #bf632b
     right: 0
 .another__products
   .catalog__items

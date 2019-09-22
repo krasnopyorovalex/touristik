@@ -69,7 +69,7 @@ jQuery(document).ready(function() {
     if (productGal.length) {
         productGal.owlCarousel({
             loop:false,
-            margin:0,
+            margin:1,
             nav:true,
             dots:false,
             items: 1

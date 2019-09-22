@@ -31,50 +31,50 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <div class="phone">
-                            <svg class="icon">
-                                <use xlink:href="./img/symbols.svg#phone"></use>
-                            </svg>
-                            <a href="#">+7 (495) 664-94-42</a>
+                        <div class="logo">
+                            <a href="/">
+                                <img src="./img/logo.png" alt="">
+                            </a>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-7">
                         <div class="address">
-                            <svg class="icon">
-                                <use xlink:href="./img/symbols.svg#map"></use>
-                            </svg>
-                            Москва, Варшавское шоссе 16, офис 135
+                            <span class="box_rounded">
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#map"></use>
+                                </svg>
+                            </span>
+                            г. Симферополь, проспект победы 209Н
+                            <div class="phone">
+                                <a href="#">
+                                    <span class="box_rounded">
+                                        <svg class="icon">
+                                            <use xlink:href="./img/symbols.svg#phone"></use>
+                                        </svg>
+                                    </span>
+                                    +7(978) 706-50-92 Ярослава
+                                </a>
+                            </div>,
+                            <div class="phone">
+                                <a href="#">
+                                    <span class="box_rounded">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#phone"></use>
+                                    </svg>
+                                    </span>
+                                    +7(978) 706-50-93 Владимир
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-2">
                         <div class="search__socials-icons">
-                            <div class="btn call__popup">Перезвонить нам</div>
-                            <div class="delimiter"></div>
-                            <a href="#">
-                                <svg class="icon vk">
-                                    <use xlink:href="./img/symbols.svg#vk"></use>
+                            <div class="btn call__popup" data-target="popup__recall">
+                                Перезвонить нам
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#call"></use>
                                 </svg>
-                            </a>
-                            <a href="#">
-                                <svg class="icon fb">
-                                    <use xlink:href="./img/symbols.svg#fb"></use>
-                                </svg>
-                            </a>
-                            <a href="#">
-                                <svg class="icon ok">
-                                    <use xlink:href="./img/symbols.svg#ok"></use>
-                                </svg>
-                            </a>
-                            <a href="#">
-                                <svg class="icon twitter">
-                                    <use xlink:href="./img/symbols.svg#twitter"></use>
-                                </svg>
-                            </a>
-                            <a href="#">
-                                <svg class="icon insta">
-                                    <use xlink:href="./img/symbols.svg#insta"></use>
-                                </svg>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,14 +83,48 @@
         <nav id="sticker">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-3">
+                        <div class="box_catalog">
+                            <div class="btn_catalog">
+                                каталог товаров
+                            </div>
+                            <div class="btn_toggle">
+                                <span></span>
+                            </div>
+                            <div class="box_catalog-list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Саженцы деревьев</a>
+                                        <span><i class="icon icon_arrow"></i></span>
+                                        <ul>
+                                            <li><a href="#">Саженцы абрикоса</a></li>
+                                            <li><a href="#">Саженцы алычи</a></li>
+                                            <li><a href="#">Саженцы айвы</a></li>
+                                            <li><a href="#">Саженцы вишни</a></li>
+                                            <li><a href="#">Саженцы груши</a></li>
+                                            <li><a href="#">Саженцы кизила</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Саженцы винограда</a>
+                                        <span><i class="icon icon_arrow"></i></span>
+                                        <ul>
+                                            <li><a href="#">Виноград Азалия</a></li>
+                                            <li><a href="#">Виноград Аксинья</a></li>
+                                            <li><a href="#">Виноград Алексеевич</a></li>
+                                            <li><a href="#">Виноград Армани</a></li>
+                                            <li><a href="#">Виноград Ливия</a></li>
+                                            <li><a href="#">Виноград Киш-миш</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
                         <ul class="header__nav">
-                            <li class="logo"><a href="/"><img src="./img/logo.png" alt="logo"></a></li>
-                            <li><a href="/">Главная</a></li>
-                            <li><a href="/about.html">О нас</a></li>
-                            <li class="active"><a href="/catalog.html">Туры</a></li>
-                            <li><a href="#">Отзывы</a></li>
-                            <li><a href="/articles.html">Блог</a></li>
+                            <li><a href="/"> Доставка и оплата</a></li>
+                            <li><a href="/about.html">Блог</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>
                         <div class="call__popup call__btn visible__sm"></div>
@@ -137,7 +171,12 @@
                                     <p>Хотите заказать создание сайта, но не знаете кому лучше доверить работу: фриласн-специалистц или веб-студии. В этой статье мы честно расскажем о всех подводных камнях. Надеемся, эта информация поможет вам принять решение!</p>
                                 </div>
                                 <div class="btn__box">
-                                    <a href="#" class="btn">Дальше интереснее</a>
+                                    <a href="#" class="btn">
+                                        Дальше интереснее
+                                        <svg class="icon">
+                                            <use xlink:href="./img/symbols.svg#arrow"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +191,12 @@
                                     <p>Хотите заказать создание сайта, но не знаете кому лучше доверить работу: фриласн-специалистц или веб-студии. В этой статье мы честно расскажем о всех подводных камнях. Надеемся, эта информация поможет вам принять решение!</p>
                                 </div>
                                 <div class="btn__box">
-                                    <a href="#" class="btn">Дальше интереснее</a>
+                                    <a href="#" class="btn">
+                                        Дальше интереснее
+                                        <svg class="icon">
+                                            <use xlink:href="./img/symbols.svg#arrow"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +211,12 @@
                                     <p>Хотите заказать создание сайта, но не знаете кому лучше доверить работу: фриласн-специалистц или веб-студии. В этой статье мы честно расскажем о всех подводных камнях. Надеемся, эта информация поможет вам принять решение!</p>
                                 </div>
                                 <div class="btn__box">
-                                    <a href="#" class="btn">Дальше интереснее</a>
+                                    <a href="#" class="btn">
+                                        Дальше интереснее
+                                        <svg class="icon">
+                                            <use xlink:href="./img/symbols.svg#arrow"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +231,12 @@
                                     <p>Хотите заказать создание сайта, но не знаете кому лучше доверить работу: фриласн-специалистц или веб-студии. В этой статье мы честно расскажем о всех подводных камнях. Надеемся, эта информация поможет вам принять решение!</p>
                                 </div>
                                 <div class="btn__box">
-                                    <a href="#" class="btn">Дальше интереснее</a>
+                                    <a href="#" class="btn">
+                                        Дальше интереснее
+                                        <svg class="icon">
+                                            <use xlink:href="./img/symbols.svg#arrow"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -246,7 +300,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="not_map">
         <div class="container">
             <div class="row">
                 <div class="col-2">
@@ -268,19 +322,19 @@
                         <svg class="icon map">
                             <use xlink:href="./img/symbols.svg#map"></use>
                         </svg>
-                        Москва, Варшавское шоссе 16, офис 135
+                        г. Симферополь, проспект победы 209Н
                     </div>
                     <div class="contact">
                         <svg class="icon">
                             <use xlink:href="./img/symbols.svg#phone"></use>
                         </svg>
-                        <a href="tel:+74956649442">+7 (495) 664-94-42</a>
+                        <a href="#">+7(978) 706-50-92</a> - Ярослава
                     </div>
                     <div class="contact">
                         <svg class="icon">
                             <use xlink:href="./img/symbols.svg#phone"></use>
                         </svg>
-                        <a href="tel:+74956649442">+7 (495) 664-94-42</a>
+                        <a href="#">+7(978) 706-50-93</a> - Владимир
                     </div>
                 </div>
                 <div class="col-4 right">
@@ -292,39 +346,29 @@
                             </svg>
                         </div>
                     </form>
-                    <div class="btn call__popup">Перезвонить нам</div>
-                    <div class="socials">
-                        <a href="#">
-                            <svg class="icon vk">
-                                <use xlink:href="./img/symbols.svg#vk"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon fb">
-                                <use xlink:href="./img/symbols.svg#fb"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon ok">
-                                <use xlink:href="./img/symbols.svg#ok"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon twitter">
-                                <use xlink:href="./img/symbols.svg#twitter"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon insta">
-                                <use xlink:href="./img/symbols.svg#insta"></use>
-                            </svg>
-                        </a>
+                    <div class="btn call__popup" data-target="popup__recall">
+                        Перезвонить нам
+                        <svg class="icon">
+                            <use xlink:href="./img/symbols.svg#call"></use>
+                        </svg>
+                    </div>
+                    <div class="develop">
+                        <div class="develop__link">
+                            <a href="/" target="_blank" rel="nofollow">
+                                Создание, продвижение и <br/>техподдержка сайтов
+                            </a>
+                        </div>
+                        <div class="develop__logo">
+                            <a href="https://krasber.ru" target="_blank" rel="nofollow">
+                                <img src="./img/krasber.svg" alt="Веб-студия Красбер">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="copyright">&copy; 2018. Бравый Турист. Все права защищены.</div>
+                    <div class="copyright">&copy; 2019. Мир ламината. Все права защищены.</div>
                 </div>
             </div>
         </div>
