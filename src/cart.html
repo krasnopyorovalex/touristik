@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <title>Магазин продуктов Севаостополь - корзина</title>
+        <link rel="stylesheet" href="css/app.min.css">
+    </head>
+    <body>
+    <div class="debug">
+        <div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="loader__bg"></div>
+
+    <header>
+        <div class="top__line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="./img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="address">
+                            <span class="box_rounded">
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#map"></use>
+                                </svg>
+                            </span>
+                            г.Севастополь, Камышовое шоссе д.5
+                            <div class="phone">
+                                <a href="#">
+                                    <span class="box_rounded">
+                                        <svg class="icon">
+                                            <use xlink:href="./img/symbols.svg#phone"></use>
+                                        </svg>
+                                    </span>
+                                    +7(978) 706-50-92 Виталий
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="search__socials-icons">
+                            <div class="btn call__popup" data-target="popup__recall">
+                                Перезвонить нам
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#call"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="sticker">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="box_catalog">
+                            <div class="btn_catalog">
+                                каталог
+                            </div>
+                            <div class="btn_toggle">
+                                <span></span>
+                            </div>
+                            <div class="box_catalog-list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Саженцы деревьев</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Саженцы винограда</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="header__nav-wth-search">
+                            <ul class="header__nav">
+                                <li><a href="/">О нас</a></li>
+                                <li><a href="/">Доставка и оплата</a></li>
+                                <li><a href="/about.html">Новости</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+
+                            <a href="/cart.html" class="h-cart">
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#cart"></use>
+                                </svg>
+                                <div class="h-cart-label">Корзина</div>
+                                <div class="h-cart-count">10</div>
+                            </a>
+                        </div>
+
+                        <div class="call__popup call__btn visible__sm"></div>
+                        <div class="burger-mob visible__sm">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="title__section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Каталог товаров</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="breadcrumbs">
+                        <li><a href="/">Главная</a></li>
+                        <li>Корзина</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-9">
+                    <div class="cart-list">
+                        <div class="cart-list-item">
+                            <div class="cart-list-item-image">
+                                <img src="./img/product-01.jpg" alt="alt">
+                            </div>
+                            <div class="cart-list-item-name">
+                                Чипсы Lays С Солью
+                                <span>150 г, Флоу-пак</span>
+                            </div>
+                            <div class="cart-list-item-single">
+                                45 <span>₽/шт.</span>
+                            </div>
+                            <div class="cart-list-item-quantity">
+                                <div class="buy">
+                                    <form action="#">
+                                        <div class="buy-count">
+                                            <div class="buy-count-minus">-</div>
+                                            <input type="text" value="2" maxlength="3">
+                                            <div class="buy-count-plus">+</div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="cart-list-item-remove">
+                                <div class="btn-remove">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#icon-trash"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="cart-list-item-sum">
+                                90 <span>₽</span>
+                            </div>
+                        </div>
+                        <div class="cart-list-item">
+                            <div class="cart-list-item-image">
+                                <img src="./img/product-02.jpg" alt="alt">
+                            </div>
+                            <div class="cart-list-item-name">
+                                Чипсы Lays Сметана и зелень
+                                <span>150 г, Флоу-пак</span>
+                            </div>
+                            <div class="cart-list-item-single">
+                                80 <span>₽/шт.</span>
+                            </div>
+                            <div class="cart-list-item-quantity">
+                                <div class="buy">
+                                    <form action="#">
+                                        <div class="buy-count">
+                                            <div class="buy-count-minus">-</div>
+                                            <input type="text" value="2" maxlength="3">
+                                            <div class="buy-count-plus">+</div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="cart-list-item-remove">
+                                <div class="btn-remove">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#icon-trash"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="cart-list-item-sum">
+                                90 <span>₽</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="panel-info">
+                        <div class="panel-info-item">
+                            <div class="panel-info-item-label">
+                                Минимальная сумма заказа
+                            </div>
+                            <div class="panel-info-item-value">
+                                1 000 ₽
+                            </div>
+                        </div>
+                        <div class="panel-info-item">
+                            <div class="panel-info-item-label">
+                                Товаров
+                            </div>
+                            <div class="panel-info-item-value">
+                                3
+                            </div>
+                        </div>
+                        <div class="panel-info-item">
+                            <div class="panel-info-item-label">
+                                Сумма заказа
+                            </div>
+                            <div class="panel-info-item-value">
+                                2700 ₽
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="not_map">
+        <div class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <ul>
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Каталог товаров</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul>
+                            <li><a href="#">Отзывы</a></li>
+                            <li><a href="#">Блог</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <div class="contact">
+                            <svg class="icon map">
+                                <use xlink:href="./img/symbols.svg#map"></use>
+                            </svg>
+                            г.Севастополь, Камышовое шоссе д.5
+                        </div>
+                        <div class="contact">
+                            <svg class="icon">
+                                <use xlink:href="./img/symbols.svg#phone"></use>
+                            </svg>
+                            <a href="#">+7(978) 706-50-92</a> - Виталий
+                        </div>
+                    </div>
+                    <div class="col-4 right">
+                        <form action="" class="search">
+                            <div class="single__block">
+                                <input type="text" placeholder="Введите текст ...">
+                                <svg class="icon search">
+                                    <use xlink:href="./img/symbols.svg#search"></use>
+                                </svg>
+                            </div>
+                        </form>
+                        <div class="develop">
+                            <div class="develop__link">
+                                <a href="/" target="_blank" rel="nofollow">
+                                    Создание, продвижение и <br/>техподдержка сайтов
+                                </a>
+                            </div>
+                            <div class="develop__logo">
+                                <a href="https://krasber.ru" target="_blank" rel="nofollow">
+                                    <img src="./img/krasber.svg" alt="Веб-студия Красбер">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright">&copy; 2020. Мир ламината. Все права защищены.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile__menu">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/about.html">О нас</a></li>
+            <li class="active"><a href="/catalog.html">Туры</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="/articles.html">Блог</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <div class="socials">
+            <a href="#">
+                <svg class="icon vk">
+                    <use xlink:href="./img/symbols.svg#vk"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon fb">
+                    <use xlink:href="./img/symbols.svg#fb"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon ok">
+                    <use xlink:href="./img/symbols.svg#ok"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon twitter">
+                    <use xlink:href="./img/symbols.svg#twitter"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon insta">
+                    <use xlink:href="./img/symbols.svg#insta"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="close-menu-btn"></div>
+        <div class="menu-overlay-mob"></div>
+    </div>
+
+    <div class="popup__show-bg"></div><div class="notify"></div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/app.min.js"></script>
+    </body>
+</html>

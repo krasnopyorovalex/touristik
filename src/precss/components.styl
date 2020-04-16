@@ -13,7 +13,7 @@ img
     padding 8em 0
     position: relative
     background-size cover
-    clip-path: polygon(50% 100%, 100% 90%, 100% 0, 0 0, 0 90%)
+    //clip-path: polygon(50% 100%, 100% 90%, 100% 0, 0 0, 0 90%)
     sm-block({
       text-align: center
       padding: 4em 0
@@ -21,13 +21,13 @@ img
     &:before
       position: absolute
       content ""
-      background-color: rgba(0, 0, 0, 0.2)
+      background-color: rgba(0, 0, 0, 0.4)
       top: 0
       right: 0
       left: 0
       bottom: 0
-      z-index -1
-      clip-path: polygon(50% 100%, 100% 90%, 100% 0, 0 0, 0 90%)
+      z-index 0
+      //clip-path: polygon(50% 100%, 100% 90%, 100% 0, 0 0, 0 90%)
     .col-6
       position: relative
     .owl-text
@@ -173,7 +173,7 @@ section, main
       position: absolute
       content ""
 .title__section
-  padding 1rem 0
+  padding 3rem 0
   text-align: center
   background-image url("../img/page_bg.jpg")
   background-repeat no-repeat
@@ -187,18 +187,22 @@ section, main
     bottom: 0
     right: 0
     left: 0
-    background-color: rgba(0,0,0,.25)
+    background-color: hsla(0, 0%, 0%, .25)
     z-index 0
   }
   h1
+    text-shadow: 0 0 50px hsla(0, 0%, 0%, .4)
     position: relative
-    color #ffffff
+    color: #ffffff
 .hidden
   display: none
 .catalog, .single__tour
   .row
     .col-9, .col-3, .col-7, .col-5
       size-md(12)
+.catalog {
+  margin 0 0 1rem 0
+}
 .catalog__items
   margin-bottom 1em
   row-flex()
@@ -209,12 +213,13 @@ section, main
     position: relative
     margin-bottom: 1em
     text-align: center
-    background-color: #ebebeb
+    border-radius 3px
+    border: 1px solid #c1bebe
     transition: all 300ms ease
-    padding 0 0 1em 0
+    box-shadow: 0 4px 6px rgba(0,0,0,.1)
     col()
-    size(4)
-    size-md(6)
+    size(3)
+    size-md(4)
     size-sm(12)
     size-xxs(12)
     display: flex
@@ -243,31 +248,41 @@ section, main
       a
         margin auto 0
     &:hover
-      box-shadow: 0 3px 10px rgba(0,0,0,0.25), 0 0 2px rgba(0,0,0,0.22);
+      box-shadow: none
     .catalog__items-info
-      padding 1em
-      .name a
-        color #000
-        font-size: rem(18px)
-        font-weight: 500
-        line-height: 22px
-        &:hover
-          color: $mainColor
+      padding 1em 0 0 0
+      .name
+        padding 0 1em
+        text-align: left
+        span {
+          font-size rem(14px)
+          display: block
+          margin .4rem 0 0 0
+          color: #666666
+        }
+        a
+          color #000
+          font-size: rem(16px)
+          font-weight: 500
+          line-height: 22px
+          display: block
+          &:hover
+            color: $mainColor
       .prices
-        margin 2em 0
+        margin 2em 0 1rem 0
+        padding 0 1em
         font-weight: 500
         line-height: 18px
         display: flex
-        .price__new
+        .price
           width: 50%
           font-size: rem(20px)
+          font-weight 500
           text-align: left
-        .price__old
-          text-align: right
-          width: 50%
-          color: #404040
-          text-decoration: line-through
-          font-size rem(14px)
+          span {
+            color: #666
+            font-size rem(14px)
+          }
       .btn__go, .call__popup
         color: #ffffff
         .icon {
@@ -279,6 +294,48 @@ section, main
           cursor: pointer
           background-color: $whiteColor
           color: #000000
+.buy {
+  padding 1rem
+  border-top: 1px solid #f5ecec
+  form {
+    display: flex
+    align-items center
+    input {
+      width: 34px
+      box-sizing border-box
+      padding 4px 4px
+      text-align: center
+      font-size rem(14px)
+      border: none
+    }
+  }
+  &-count {
+    display: flex
+    align-items stretch
+    &-minus, &-plus {
+      font-size rem(16px)
+      padding 4px 10px
+      border: 1px solid #c1bebe
+      border-radius 5px
+      background-color: #fff
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &-submit {
+    margin 0 0 0 auto
+    .btn {
+      font-size rem(14px)
+      font-weight normal
+      padding 8px 15px
+      border-radius 5px
+      &:before {
+        display: none
+      }
+    }
+  }
+}
 .pagination
   text-align: center
   margin 1em 0
@@ -561,51 +618,6 @@ table th, table td
     height: auto
     display: block
     margin 0 auto 4px auto
-.schedule
-  margin 1em 0
-  &__row
-    row-flex()
-    align-items center
-    & + .schedule__row
-      margin-top: 1px
-    &:nth-child(odd)
-      background-color: #ceffc1
-    &:nth-child(even)
-      background-color: #a0ed8b
-    .date, .name, .price, .order
-      padding .8em 0
-      sm-block({
-        padding: .4em 0
-      })
-    .date
-      size(2)
-      size-sm(12)
-      col()
-      text-align: center
-      sm-block({
-        text-align: center
-      })
-    .name
-      size(6)
-      size-sm(12)
-      col()
-      padding .8em 1em
-      sm-block({
-        text-align: center
-        padding: .2em 0
-      })
-    .price
-      text-align: center
-      size(2)
-      size-sm(12)
-      col()
-    .order
-      text-align: center
-      size(2)
-      size-sm(12)
-      col()
-      .btn
-        color #fff
 .box_catalog
   display: flex;
   align-items: center;
@@ -661,19 +673,8 @@ table th, table td
           li {
             a {
               position: relative;
-              padding: .5rem 0 .5rem 2.2rem;
+              padding: .5rem 0 .5rem 1.2rem;
               font-size: rem(14px);
-              &:before {
-                content: "";
-                position: absolute;
-                top: calc(50% - 3px);
-                left: 1.2rem;
-                width: 6px;
-                height: 6px;
-                transition: all 300ms ease;
-                border-radius: 50%;
-                background-color: $whiteColor;
-              }
             }
           }
         }
@@ -736,4 +737,47 @@ table th, table td
 }
 .flex {
   display: flex
+}
+.h-cart {
+  display: flex
+  align-items center
+  position: relative;
+  margin 0 0 0 auto
+  border-radius: 25px;
+  border: 1px solid #FFC34D;
+  background-color: #ffa712;
+  padding 8px 20px
+  color: #ffffff
+  &:hover {
+    background-color: #DB860D
+  }
+  sm-block({
+    margin: .4rem 0 0 1rem
+  })
+  .icon {
+    width: 24px
+    height: 24px
+    fill: #666
+    margin 0 .5rem 0 0
+  }
+  &-label {
+    md-block({
+      display: none
+    })
+  }
+  &-count {
+    display: flex
+    align-items center
+    justify-content center
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ffbd4d;
+    background-color: #DB860D;
+    text-align: center;
+    font-size: rem(12px);
+    border-radius: 50%;
+  }
 }

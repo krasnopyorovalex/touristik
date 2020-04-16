@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-        <title>Сайт для туристов</title>
+        <title>Магазин продуктов Севаостополь - каталог</title>
         <link rel="stylesheet" href="css/app.min.css">
     </head>
     <body>
@@ -26,6 +26,13 @@
         </div>
     </div>
 
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="loader__bg"></div>
+
     <header>
         <div class="top__line">
             <div class="container">
@@ -37,14 +44,14 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-7">
+                    <div class="col-5">
                         <div class="address">
                             <span class="box_rounded">
                                 <svg class="icon">
                                     <use xlink:href="./img/symbols.svg#map"></use>
                                 </svg>
                             </span>
-                            г. Симферополь, проспект победы 209Н
+                            г.Севастополь, Камышовое шоссе д.5
                             <div class="phone">
                                 <a href="#">
                                     <span class="box_rounded">
@@ -52,22 +59,12 @@
                                             <use xlink:href="./img/symbols.svg#phone"></use>
                                         </svg>
                                     </span>
-                                    +7(978) 706-50-92 Ярослава
-                                </a>
-                            </div>,
-                            <div class="phone">
-                                <a href="#">
-                                    <span class="box_rounded">
-                                    <svg class="icon">
-                                        <use xlink:href="./img/symbols.svg#phone"></use>
-                                    </svg>
-                                    </span>
-                                    +7(978) 706-50-93 Владимир
+                                    +7(978) 706-50-92 Виталий
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-4">
                         <div class="search__socials-icons">
                             <div class="btn call__popup" data-target="popup__recall">
                                 Перезвонить нам
@@ -86,7 +83,7 @@
                     <div class="col-3">
                         <div class="box_catalog">
                             <div class="btn_catalog">
-                                каталог товаров
+                                каталог
                             </div>
                             <div class="btn_toggle">
                                 <span></span>
@@ -95,38 +92,32 @@
                                 <ul>
                                     <li>
                                         <a href="#">Саженцы деревьев</a>
-                                        <span><i class="icon icon_arrow"></i></span>
-                                        <ul>
-                                            <li><a href="#">Саженцы абрикоса</a></li>
-                                            <li><a href="#">Саженцы алычи</a></li>
-                                            <li><a href="#">Саженцы айвы</a></li>
-                                            <li><a href="#">Саженцы вишни</a></li>
-                                            <li><a href="#">Саженцы груши</a></li>
-                                            <li><a href="#">Саженцы кизила</a></li>
-                                        </ul>
                                     </li>
                                     <li>
                                         <a href="#">Саженцы винограда</a>
-                                        <span><i class="icon icon_arrow"></i></span>
-                                        <ul>
-                                            <li><a href="#">Виноград Азалия</a></li>
-                                            <li><a href="#">Виноград Аксинья</a></li>
-                                            <li><a href="#">Виноград Алексеевич</a></li>
-                                            <li><a href="#">Виноград Армани</a></li>
-                                            <li><a href="#">Виноград Ливия</a></li>
-                                            <li><a href="#">Виноград Киш-миш</a></li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-9">
-                        <ul class="header__nav">
-                            <li><a href="/"> Доставка и оплата</a></li>
-                            <li><a href="/about.html">Блог</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
+                        <div class="header__nav-wth-search">
+                            <ul class="header__nav">
+                                <li><a href="/">О нас</a></li>
+                                <li><a href="/">Доставка и оплата</a></li>
+                                <li><a href="/about.html">Новости</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+
+                            <a href="/cart.html" class="h-cart">
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#cart"></use>
+                                </svg>
+                                <div class="h-cart-label">Корзина</div>
+                                <div class="h-cart-count">10</div>
+                            </a>
+                        </div>
+
                         <div class="call__popup call__btn visible__sm"></div>
                         <div class="burger-mob visible__sm">
                             <span></span>
@@ -158,175 +149,110 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-3">
-                    <div class="filter__panel">
-                        <div class="filter__panel-btn">
-                            Фильтры
-                            <div class="btn_toggle">
-                                <span></span>
-                            </div>
-                        </div>
-                        <form action="#" class="filter__panel-form">
-                            <input type="hidden" value="" name="price">
-                            <div class="filter__block-price">
-                                <div class="label">Цена, ₽:</div>
-                                <div id="keypress"></div>
-                                <div class="single__block-price">
-                                    <div>
-                                        <label for="input__price-from">от:</label>
-                                        <input type="text" id="input__price-from" value="1500" data-value="100">
-                                    </div>
-                                    <div>
-                                        <label for="input__price-to">до:</label>
-                                        <input type="text" id="input__price-to" value="8000" data-value="10000">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filter__block is__opened">
-                                <div class="label">Цвет:</div>
-                                <div class="list">
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_1" name="f[]" value="1">
-                                        <label for="brand_1">коричневый (1)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_2" name="f[]" value="1">
-                                        <label for="brand_2">бежевый (1)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_3" name="f[]" value="1">
-                                        <label for="brand_3">синий (5)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_4" name="f[]" value="1">
-                                        <label for="brand_4">красный (10)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_5" name="f[]" value="1">
-                                        <label for="brand_5">бордовый (2)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_6" name="f[]" value="1">
-                                        <label for="brand_6">голубой (9)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_7" name="f[]" value="1">
-                                        <label for="brand_7">желтый (8)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_8" name="f[]" value="1">
-                                        <label for="brand_8">красный (5)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_9" name="f[]" value="1">
-                                        <label for="brand_9">зеленый (2)</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="brand_10" name="f[]" value="1">
-                                        <label for="brand_10">малиновый (1)</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filter__block">
-                                <div class="label">Материал:</div>
-                                <div class="list hidden">
-                                    <div class="list__item">
-                                        <input type="checkbox" id="m_1" name="m[]" value="1">
-                                        <label for="m_1">дерево</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="m_2" name="m[]" value="1">
-                                        <label for="m_2">пластик</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="m_3" name="m[]" value="1">
-                                        <label for="m_3">полиэстирол</label>
-                                    </div>
-                                    <div class="list__item">
-                                        <input type="checkbox" id="m_4" name="m[]" value="1">
-                                        <label for="m_4">сталь</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filter__block is__opened">
-                                <div class="label">Теги:</div>
-                                <div class="tags">
-                                    <ul class="not__decorated">
-                                        <li><a href="#">обувь</a></li>
-                                        <li><a href="#">рюкзак</a></li>
-                                        <li><a href="#">поход</a></li>
-                                        <li><a href="#">ботинки</a></li>
-                                        <li><a href="#">Jack Wolfskin</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="run_filter-btn">Показать</div>
+                <div class="col-2">
+                    <div class="left-category-menu">
+                        <ul class="not__decorated">
+                            <li class="current">
+                                <a href="#" class="active">Соки, вода, напитки</a>
+                                <span class="icon-down">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#icon-cheveron-down"></use>
+                                    </svg>
+                                </span>
+                                <ul class="not__decorated">
+                                    <li><a href="#">Газированные напитки, лимонады</a></li>
+                                    <li><a href="#">Соки, Нектары, Смузи</a></li>
+                                    <li><a href="#">Энергетические напитки</a></li>
+                                    <li><a href="#">Вода питьевая и минеральная</a></li>
+                                    <li><a href="#">Холодный чай</a></li>
+                                    <li><a href="#">Спортивный напитки</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Кондитерские изделия</a>
+                                <span class="icon-down">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#icon-cheveron-down"></use>
+                                    </svg>
+                                </span>
+                                <ul class="not__decorated">
+                                    <li><a href="#">Шоколад, батончики</a></li>
+                                    <li><a href="#">Печенье, пряники, крекеры</a></li>
+                                    <li><a href="#">Конфеты</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Бакалея</a>
+                                <span class="icon-down">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#icon-cheveron-down"></use>
+                                    </svg>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#">Молочные продукты</a>
+                                <span class="icon-down">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#icon-cheveron-down"></use>
+                                    </svg>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="#">Детское питание, уход</a>
+                                <span class="icon-down">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#icon-cheveron-down"></use>
+                                    </svg>
+                                </span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-9">
-                    <div class="sorting">
-                        <div class="label">Сортировать:</div>
+                <div class="col-10">
+                    <div class="search-form">
                         <form action="#">
-                            <div class="single__block">
-                                <select name="alphabet">
-                                    <option value="one">По умолчанию (алфавиту)</option>
-                                    <option value="two">От А до Я</option>
-                                </select>
-                                <i class="select__arrow"></i>
-                            </div>
-
-                            <div class="single__block">
-                                <select name="in__news">
-                                    <option value="one">По новизне</option>
-                                    <option value="two">От А до Я</option>
-                                </select>
-                                <i class="select__arrow"></i>
-                            </div>
-
-                            <div class="single__block">
-                                <select name="price">
-                                    <option value="one">По цене</option>
-                                    <option value="two">От А до Я</option>
-                                </select>
-                                <i class="select__arrow"></i>
-                            </div>
-
-                            <div class="single__block">
-                                <select name="popular">
-                                    <option value="one">По популярности</option>
-                                    <option value="two">От А до Я</option>
-                                </select>
-                                <i class="select__arrow"></i>
+                            <div class="group">
+                                <input type="text" placeholder="Поиск">
+                                <button class="submit" type="submit" title="Начать поиск">
+                                    <svg class="icon">
+                                        <use xlink:href="./img/symbols.svg#search"></use>
+                                    </svg>
+                                    Найти
+                                </button>
                             </div>
                         </form>
                     </div>
-
                     <div class="catalog__items">
                         <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
-                                    <img src="./img/item-01.png" alt="">
+                                    <img src="./img/product-01.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="catalog__items-info">
                                 <div class="name">
-                                    <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
+                                    <a href="#">Чипсы Lays С Солью</a>
+                                    <span>150 г, Флоу-пак</span>
                                 </div>
                                 <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
+                                    <div class="price">
+                                        45 <span>₽/шт.</span>
                                     </div>
                                 </div>
-                                <a href="#" class="btn__go">
-                                    Подробнее
-                                    <svg class="icon">
-                                        <use xlink:href="./img/symbols.svg#tap"></use>
-                                    </svg>
-                                </a>
+                                <div class="buy">
+                                    <form action="#">
+                                        <div class="buy-count">
+                                            <div class="buy-count-minus">-</div>
+                                            <input type="text" value="1" maxlength="3">
+                                            <div class="buy-count-plus">+</div>
+                                        </div>
+                                        <div class="buy-submit">
+                                            <button type="submit" class="btn">
+                                                В корзину
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="label__product new">Новинка!</div>
                             <div class="label__product info">1+1</div>
@@ -334,108 +260,163 @@
                         <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
-                                    <img src="./img/item-02.png" alt="">
+                                    <img src="./img/product-02.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="catalog__items-info">
                                 <div class="name">
-                                    <a href="#">Ботинки Jack Wolfskin Vojo Hike Mid Texapore</a>
+                                    <a href="#">Чипсы Lays Сметана и зелень</a>
+                                    <span>150 г, Флоу-пак</span>
                                 </div>
                                 <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
+                                    <div class="price">
+                                        45 <span>₽/шт.</span>
                                     </div>
                                 </div>
-                                <a href="#" class="btn__go">Заказать</a>
+                                <div class="buy">
+                                    <form action="#">
+                                        <div class="buy-count">
+                                            <div class="buy-count-minus">-</div>
+                                            <input type="text" value="1" maxlength="3">
+                                            <div class="buy-count-plus">+</div>
+                                        </div>
+                                        <div class="buy-submit">
+                                            <button type="submit" class="btn">
+                                                В корзину
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
-                                    <img src="./img/product_img.jpeg" alt="">
+                                    <img src="./img/product-03.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="catalog__items-info">
                                 <div class="name">
-                                    <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
+                                    <a href="#">Чипсы Lays Бекон</a>
+                                    <span>80 г, Флоу-пак</span>
                                 </div>
                                 <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
+                                    <div class="price">
+                                        45 <span>₽/шт.</span>
                                     </div>
                                 </div>
-                                <a href="#" class="btn__go">Заказать</a>
+                                <div class="buy">
+                                    <form action="#">
+                                        <div class="buy-count">
+                                            <div class="buy-count-minus">-</div>
+                                            <input type="text" value="1" maxlength="3">
+                                            <div class="buy-count-plus">+</div>
+                                        </div>
+                                        <div class="buy-submit">
+                                            <button type="submit" class="btn">
+                                                В корзину
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="label__product info">1+1</div>
                         </div>
                         <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
-                                    <img src="./img/item-01.png" alt="">
+                                    <img src="./img/product-04.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="catalog__items-info">
                                 <div class="name">
-                                    <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
+                                    <a href="#">Чипсы Lays Белые грибы со сметаной</a>
+                                    <span>80 г, Флоу-пак</span>
                                 </div>
                                 <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
+                                    <div class="price">
+                                        45 <span>₽/шт.</span>
                                     </div>
                                 </div>
-                                <a href="#" class="btn__go">Заказать</a>
+                                <div class="buy">
+                                    <form action="#">
+                                        <div class="buy-count">
+                                            <div class="buy-count-minus">-</div>
+                                            <input type="text" value="1" maxlength="3">
+                                            <div class="buy-count-plus">+</div>
+                                        </div>
+                                        <div class="buy-submit">
+                                            <button type="submit" class="btn">
+                                                В корзину
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
-                                    <img src="./img/item-02.png" alt="">
+                                    <img src="./img/product-05.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="catalog__items-info">
                                 <div class="name">
-                                    <a href="#">Ботинки Jack Wolfskin Vojo Hike Mid Texapore</a>
+                                    <a href="#">Чипсы Lays Краб</a>
+                                    <span>80 г, Флоу-пак</span>
                                 </div>
                                 <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
+                                    <div class="price">
+                                        45 <span>₽/шт.</span>
                                     </div>
                                 </div>
-                                <a href="#" class="btn__go">Заказать</a>
+                                <div class="buy">
+                                    <form action="#">
+                                        <div class="buy-count">
+                                            <div class="buy-count-minus">-</div>
+                                            <input type="text" value="1" maxlength="3">
+                                            <div class="buy-count-plus">+</div>
+                                        </div>
+                                        <div class="buy-submit">
+                                            <button type="submit" class="btn">
+                                                В корзину
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="label__product new">Новинка!</div>
                         </div>
                         <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
-                                    <img src="./img/item-01.png" alt="">
+                                    <img src="./img/product-06.jpg" alt="">
                                 </a>
                             </figure>
                             <div class="catalog__items-info">
                                 <div class="name">
-                                    <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
+                                    <a href="#">Чипсы Lays Рифленые Лобстер</a>
+                                    <span>80 г, Флоу-пак</span>
                                 </div>
                                 <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
+                                    <div class="price">
+                                        45 <span>₽/шт.</span>
                                     </div>
                                 </div>
-                                <a href="#" class="btn__go">Заказать</a>
+                                <div class="buy">
+                                    <form action="#">
+                                        <div class="buy-count">
+                                            <div class="buy-count-minus">-</div>
+                                            <input type="text" value="1" maxlength="3">
+                                            <div class="buy-count-plus">+</div>
+                                        </div>
+                                        <div class="buy-submit">
+                                            <button type="submit" class="btn">
+                                                В корзину
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="label__product info">1+1</div>
                         </div>
@@ -454,236 +435,71 @@
         </div>
     </main>
 
-    <section class="banners">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <img src="./img/banner-01.png" alt="alt">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="another__products">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="title">Другие товары в данной категории</div>
-                    <div class="sub__title">
-                        Другие товары
+    <footer class="not_map">
+        <div class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <ul>
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Каталог товаров</a></li>
+                        </ul>
                     </div>
-
-                    <div class="catalog__items owl-carousel owl-theme">
-                        <div class="catalog__items-item">
-                            <figure>
-                                <a href="#">
-                                    <img src="./img/item-01.png" alt="">
-                                </a>
-                            </figure>
-                            <div class="catalog__items-info">
-                                <div class="name">
-                                    <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
-                                </div>
-                                <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
-                                    </div>
-                                </div>
-                                <a href="#" class="btn__go">Заказать</a>
-                            </div>
-                            <div class="label__product new">Новинка!</div>
-                            <div class="label__product info">1+1</div>
-                        </div>
-                        <div class="catalog__items-item">
-                            <figure>
-                                <a href="#">
-                                    <img src="./img/item-02.png" alt="">
-                                </a>
-                            </figure>
-                            <div class="catalog__items-info">
-                                <div class="name">
-                                    <a href="#">Ботинки Jack Wolfskin Vojo Hike Mid Texapore</a>
-                                </div>
-                                <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
-                                    </div>
-                                </div>
-                                <a href="#" class="btn__go">Заказать</a>
-                            </div>
-                        </div>
-                        <div class="catalog__items-item">
-                            <figure>
-                                <a href="#">
-                                    <img src="./img/item-01.png" alt="">
-                                </a>
-                            </figure>
-                            <div class="catalog__items-info">
-                                <div class="name">
-                                    <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
-                                </div>
-                                <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
-                                    </div>
-                                </div>
-                                <a href="#" class="btn__go">Заказать</a>
-                            </div>
-                            <div class="label__product info">1+1</div>
-                        </div>
-                        <div class="catalog__items-item">
-                            <figure>
-                                <a href="#">
-                                    <img src="./img/item-01.png" alt="">
-                                </a>
-                            </figure>
-                            <div class="catalog__items-info">
-                                <div class="name">
-                                    <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
-                                </div>
-                                <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
-                                    </div>
-                                </div>
-                                <a href="#" class="btn__go">Заказать</a>
-                            </div>
-                        </div>
-                        <div class="catalog__items-item">
-                            <figure>
-                                <a href="#">
-                                    <img src="./img/item-01.png" alt="">
-                                </a>
-                            </figure>
-                            <div class="catalog__items-info">
-                                <div class="name">
-                                    <a href="#">Рюкзак туристический Сплав "Phoenix 27"</a>
-                                </div>
-                                <div class="prices">
-                                    <div class="price__new">
-                                        2 299 ₽
-                                    </div>
-                                    <div class="price__old">
-                                        3 499 ₽
-                                    </div>
-                                </div>
-                                <a href="#" class="btn__go">Заказать</a>
-                            </div>
-                        </div>
+                    <div class="col-2">
+                        <ul>
+                            <li><a href="#">Отзывы</a></li>
+                            <li><a href="#">Блог</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="seo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="title">Невероятная Африка</h1>
-                    <div class="sub__title">СЕО Текст</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="seo__text">
-                        <p><b>Африка</b> – часть света, имеющая площадь с островами 30,3 миллионов км2, это второе место после <a href="#">Евразии</a>, 6% всей поверхности нашей планеты и 20% суши.</p>
-                        <p>Географическое положение</p>
-                        <p>Расположена Африка в <a href="#">Северном и Восточном полушарии</a> (большая часть), малая часть в Южном и Западном. Как и все крупные осколки древнего материка Гондвана, имеет массивные очертания, крупные полуострова и глубокие заливы отсутствуют. Протяженность континента с севера на юг – 8 тысяч км, с запада на восток – 7,5 тысяч км. На севере омывается водами Средиземного моря, на северо-востоке Красным морем на юго-востоке Индийским океаном, на западе – Атлантическим океаном. Африку от Азии отделяет Суэцкий канал, от Европы – Гибралтарский пролив.</p>
-                        <h2>Африка схема</h2>
-                        <p>Основные географические характеристики</p>
-                        <p>Африка лежит на древней платформе, что обуславливает её равнинную поверхность, которая кое-где рассекается глубокими долинами рек. На побережье материка располагаются малочисленные низменности, северо-запад – месторасположение Атласских гор, северная часть, практически полностью занимаемая пустыней Сахарой, - нагорий Ахаггар и Тибетси, восток – Эфиопского нагорья, юго-восток – Восточно-Африканского плоскогорья, крайний юг – Капских и Драконовых гор. Наивысшая точка Африки – вулкан Килиманджаро (5895 м, плоскогорье Масаи), самая низкая – 157 метров ниже уровня океана в озере Ассаль. Вдоль Красного моря, на территории Эфиопского нагорья и до устья реки Замбези протянулся самый крупный в мире разлом земной коры, который характеризуется частой сейсмической активностью.</p>
-                        <h3>Стоимость туров</h3>
-                        <p>По <a href="#">территории Африки</a> протекают реки: Конго (Центральная Африка), Нигер (Западная Африка), Лимпопо, Оранжевая, Замбези (Южная Африка), а также одна из самых полноводных и протяженных рек в мире – Нил (6852 км), текущая с юга на север (её истоки находятся на Восточно-Африканском плоскогорье, а впадает она, образуя дельту, в Средиземное море). Реки отличаются многоводностью исключительно в экваториальном поясе, благодаря выпадению там большого количества осадков, большинство из них отличаются высокой скоростью течения, имеют много порогов и водопадов. В литосферных разломах, заполненных водой, образовались озера – Ньяса, Танганьика, самое крупное пресноводное озеро Африки и второе по площади после озера Верхнее (Северная Америка) – Виктория (его площадь 68,8 тысячи км2, длина 337 км, max глубина – 83 м), крупнейшее соленое бессточное озеро – Чад (его площадь 1,35 тысячи км2, расположено на южной окраине величайшей пустыни мира Сахары).</p>
-                        <p>Вследствие расположения Африки между двумя тропическими поясами, для нее характерны высокие суммарные показатели солнечной радиации, что дает право называть Африку самым жарким континентом Земли (самая высокая температура на нашей планете была зарегистрирована в 1922 году в Эль-Азизия (Ливия) - +58 С0 в тени).</p>
-                        <p>На территории Африки выделяют такие природные зоны как вечнозеленые экваториальные леса (побережье Гвинейского залива, впадина Конго), на севере и юге переходящие в смешанные листопадно-вечнозеленые леса, затем идет природная зона саванн и редколесья, распространяющаяся на Судан, Восточную и Южную Африку, на севре и юге Африки саванны сменяются полупустынями и пустынями (Сахара, Калахари. Намиб). В юго-восточной части Африки находится небольшая зона смешанных хвойно-лиственных лесов, на склонах гор Атлас – зона жестколистных вечнозеленых лесов и кустарников. Природные зоны гор и плоскогорий подвержены законам высотной поясности.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <ul>
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Каталог товаров</a></li>
-                    </ul>
-                </div>
-                <div class="col-2">
-                    <ul>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Блог</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <div class="contact">
-                        <svg class="icon map">
-                            <use xlink:href="./img/symbols.svg#map"></use>
-                        </svg>
-                        г. Симферополь, проспект победы 209Н
-                    </div>
-                    <div class="contact">
-                        <svg class="icon">
-                            <use xlink:href="./img/symbols.svg#phone"></use>
-                        </svg>
-                        <a href="#">+7(978) 706-50-92</a> - Ярослава
-                    </div>
-                    <div class="contact">
-                        <svg class="icon">
-                            <use xlink:href="./img/symbols.svg#phone"></use>
-                        </svg>
-                        <a href="#">+7(978) 706-50-93</a> - Владимир
-                    </div>
-                </div>
-                <div class="col-4 right">
-                    <form action="" class="search">
-                        <div class="single__block">
-                            <input type="text" placeholder="Введите текст ...">
-                            <svg class="icon search">
-                                <use xlink:href="./img/symbols.svg#search"></use>
+                    <div class="col-4">
+                        <div class="contact">
+                            <svg class="icon map">
+                                <use xlink:href="./img/symbols.svg#map"></use>
                             </svg>
+                            г.Севастополь, Камышовое шоссе д.5
                         </div>
-                    </form>
-                    <div class="btn call__popup" data-target="popup__recall">
-                        Перезвонить нам
-                        <svg class="icon">
-                            <use xlink:href="./img/symbols.svg#call"></use>
-                        </svg>
+                        <div class="contact">
+                            <svg class="icon">
+                                <use xlink:href="./img/symbols.svg#phone"></use>
+                            </svg>
+                            <a href="#">+7(978) 706-50-92</a> - Виталий
+                        </div>
                     </div>
-                    <div class="develop">
-                        <div class="develop__link">
-                            <a href="/" target="_blank" rel="nofollow">
-                                Создание, продвижение и <br/>техподдержка сайтов
-                            </a>
-                        </div>
-                        <div class="develop__logo">
-                            <a href="https://krasber.ru" target="_blank" rel="nofollow">
-                                <img src="./img/krasber.svg" alt="Веб-студия Красбер">
-                            </a>
+                    <div class="col-4 right">
+                        <form action="" class="search">
+                            <div class="single__block">
+                                <input type="text" placeholder="Введите текст ...">
+                                <svg class="icon search">
+                                    <use xlink:href="./img/symbols.svg#search"></use>
+                                </svg>
+                            </div>
+                        </form>
+                        <!--                        <div class="btn call__popup" data-target="popup__recall">-->
+                        <!--                            Перезвонить нам-->
+                        <!--                            <svg class="icon">-->
+                        <!--                                <use xlink:href="./img/symbols.svg#call"></use>-->
+                        <!--                            </svg>-->
+                        <!--                        </div>-->
+                        <div class="develop">
+                            <div class="develop__link">
+                                <a href="/" target="_blank" rel="nofollow">
+                                    Создание, продвижение и <br/>техподдержка сайтов
+                                </a>
+                            </div>
+                            <div class="develop__logo">
+                                <a href="https://krasber.ru" target="_blank" rel="nofollow">
+                                    <img src="./img/krasber.svg" alt="Веб-студия Красбер">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="copyright">&copy; 2019. Мир ламината. Все права защищены.</div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright">&copy; 2020. Мир ламината. Все права защищены.</div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -90,8 +90,10 @@ function browser_sync (done) {
 
 function watch_files () {
     gulp.watch(config.src + config.css.watch, css);
-    gulp.watch(config.src + config.js.src, gulp.series(js, browserSync.reload));
-    gulp.watch(config.src + config.html.src, gulp.series(browserSync.reload));
+    gulp.watch(config.src + config.js.src, gulp.series(js));
+    //gulp.watch(config.src + config.html.src, gulp.series(browserSync.reload));
+
+    gulp.watch(config.src + config.html.src).on('change', browserSync.reload);
 }
 
 gulp.task('css', css);

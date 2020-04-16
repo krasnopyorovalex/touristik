@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-        <title>Море ламината - Симферополь</title>
+        <title>Магазин продуктов - Севастополь</title>
         <link rel="stylesheet" href="css/app.min.css">
         <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
     </head>
@@ -45,14 +45,14 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-7">
+                    <div class="col-5">
                         <div class="address">
                             <span class="box_rounded">
                                 <svg class="icon">
                                     <use xlink:href="./img/symbols.svg#map"></use>
                                 </svg>
                             </span>
-                            г. Симферополь, проспект победы 209Н
+                            г.Севастополь, Камышовое шоссе д.5
                             <div class="phone">
                                 <a href="#">
                                     <span class="box_rounded">
@@ -60,22 +60,12 @@
                                             <use xlink:href="./img/symbols.svg#phone"></use>
                                         </svg>
                                     </span>
-                                    +7(978) 706-50-92 Ярослава
-                                </a>
-                            </div>,
-                            <div class="phone">
-                                <a href="#">
-                                    <span class="box_rounded">
-                                    <svg class="icon">
-                                        <use xlink:href="./img/symbols.svg#phone"></use>
-                                    </svg>
-                                    </span>
-                                    +7(978) 706-50-93 Владимир
+                                    +7(978) 706-50-92 Виталий
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-4">
                         <div class="search__socials-icons">
                             <div class="btn call__popup" data-target="popup__recall">
                                 Перезвонить нам
@@ -94,7 +84,7 @@
                     <div class="col-3">
                         <div class="box_catalog">
                             <div class="btn_catalog">
-                                каталог товаров
+                                каталог
                             </div>
                             <div class="btn_toggle">
                                 <span></span>
@@ -103,38 +93,32 @@
                                 <ul>
                                     <li>
                                         <a href="#">Саженцы деревьев</a>
-                                        <span><i class="icon icon_arrow"></i></span>
-                                        <ul>
-                                            <li><a href="#">Саженцы абрикоса</a></li>
-                                            <li><a href="#">Саженцы алычи</a></li>
-                                            <li><a href="#">Саженцы айвы</a></li>
-                                            <li><a href="#">Саженцы вишни</a></li>
-                                            <li><a href="#">Саженцы груши</a></li>
-                                            <li><a href="#">Саженцы кизила</a></li>
-                                        </ul>
                                     </li>
                                     <li>
                                         <a href="#">Саженцы винограда</a>
-                                        <span><i class="icon icon_arrow"></i></span>
-                                        <ul>
-                                            <li><a href="#">Виноград Азалия</a></li>
-                                            <li><a href="#">Виноград Аксинья</a></li>
-                                            <li><a href="#">Виноград Алексеевич</a></li>
-                                            <li><a href="#">Виноград Армани</a></li>
-                                            <li><a href="#">Виноград Ливия</a></li>
-                                            <li><a href="#">Виноград Киш-миш</a></li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-9">
-                        <ul class="header__nav">
-                            <li><a href="/"> Доставка и оплата</a></li>
-                            <li><a href="/about.html">Блог</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
+                        <div class="header__nav-wth-search">
+                            <ul class="header__nav">
+                                <li><a href="/">О нас</a></li>
+                                <li><a href="/">Доставка и оплата</a></li>
+                                <li><a href="/about.html">Новости</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+
+                            <a href="/cart.html" class="h-cart">
+                                <svg class="icon">
+                                    <use xlink:href="./img/symbols.svg#cart"></use>
+                                </svg>
+                                <div class="h-cart-label">Корзина</div>
+                                <div class="h-cart-count">10</div>
+                            </a>
+                        </div>
+
                         <div class="call__popup call__btn visible__sm"></div>
                         <div class="burger-mob visible__sm">
                             <span></span>
@@ -477,11 +461,12 @@
         </div>
     </main>
 
+    <div class="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A12411d9035b4f83093cb17a321a2359ea473e2d59cb36b1c72b205a623335ba8&amp;source=constructor" width="100%" height="650" frameborder="0"></iframe>
+    </div>
+
     <footer>
-        <div class="map">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A12411d9035b4f83093cb17a321a2359ea473e2d59cb36b1c72b205a623335ba8&amp;source=constructor" width="100%" height="650" frameborder="0"></iframe>
-        </div>
-        <div class="contacts_map">
+        <div>
             <div class="container">
                 <div class="row">
                     <div class="col-2">
@@ -503,19 +488,13 @@
                             <svg class="icon map">
                                 <use xlink:href="./img/symbols.svg#map"></use>
                             </svg>
-                            г. Симферополь, проспект победы 209Н
+                            г.Севастополь, Камышовое шоссе д.5
                         </div>
                         <div class="contact">
                             <svg class="icon">
                                 <use xlink:href="./img/symbols.svg#phone"></use>
                             </svg>
-                            <a href="#">+7(978) 706-50-92</a> - Ярослава
-                        </div>
-                        <div class="contact">
-                            <svg class="icon">
-                                <use xlink:href="./img/symbols.svg#phone"></use>
-                            </svg>
-                            <a href="#">+7(978) 706-50-93</a> - Владимир
+                            <a href="#">+7(978) 706-50-92</a> - Виталий
                         </div>
                     </div>
                     <div class="col-4 right">
@@ -527,12 +506,12 @@
                                 </svg>
                             </div>
                         </form>
-                        <div class="btn call__popup" data-target="popup__recall">
-                            Перезвонить нам
-                            <svg class="icon">
-                                <use xlink:href="./img/symbols.svg#call"></use>
-                            </svg>
-                        </div>
+<!--                        <div class="btn call__popup" data-target="popup__recall">-->
+<!--                            Перезвонить нам-->
+<!--                            <svg class="icon">-->
+<!--                                <use xlink:href="./img/symbols.svg#call"></use>-->
+<!--                            </svg>-->
+<!--                        </div>-->
                         <div class="develop">
                             <div class="develop__link">
                                 <a href="/" target="_blank" rel="nofollow">
@@ -549,7 +528,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="copyright">&copy; 2019. Мир ламината. Все права защищены.</div>
+                        <div class="copyright">&copy; 2020. Мир ламината. Все права защищены.</div>
                     </div>
                 </div>
             </div>
