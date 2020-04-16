@@ -133,15 +133,21 @@ jQuery(document).ready(function() {
     |   NoUiSlider
     |-----------------------------------------------------------
     */
-    var keypressSlider = document.getElementById('keypress');
+    var keypressSlider = document.getElementById('keypress'),
+        runFilterBtn = jQuery('.run_filter-btn');
     if(keypressSlider) {
         var input0 = document.getElementById('input__price-from');
         var input1 = document.getElementById('input__price-to');
         var inputs = [input0, input1];
 
+        var valueInput0 = parseInt(input0.getAttribute('data-value')),
+            valueInput1 = parseInt(input1.getAttribute('data-value')),
+            selectedValue0 = parseInt(input0.value),
+            selectedValue1 = parseInt(input1.value);
+
         noUiSlider.create(keypressSlider, {
             connect: true,
-            start: [0, 20000],
+            start: [selectedValue0, selectedValue1],
             format: {
                 to: function (value) {
                     return parseInt(value);
@@ -151,9 +157,18 @@ jQuery(document).ready(function() {
                 }
             },
             range: {
-                'min': [0],
-                'max': [20000]
+                'min': [valueInput0],
+                'max': [valueInput1]
             }
+        });
+
+        keypressSlider.noUiSlider.on('change', function () {
+            runFilterBtn.fadeIn();
+            setTimeout(function () {
+                return runFilterBtn.fadeOut();
+            }, 3000);
+
+            return runFilterBtn.css('top', '10px');
         });
 
         keypressSlider.noUiSlider.on('update', function (values, handle) {
@@ -236,6 +251,36 @@ jQuery(document).ready(function() {
             }
             return filterBlock.addClass("is__opened") && _this.next('div').slideToggle();
         });
+        filterPanel.on('change', 'input[type=checkbox]', function () {
+            var childPos = parseInt(jQuery(this).offset().top),
+                filterPanelOffsetTop = parseInt(filterPanel.offset().top),
+                y = childPos - filterPanelOffsetTop - 18;
+
+            runFilterBtn.fadeIn();
+            setTimeout(function () {
+                return runFilterBtn.fadeOut();
+            }, 3000);
+
+            return runFilterBtn.css('top', y + 'px');
+        });
+        filterPanel.on('click', '.run_filter-btn', function () {
+            return filterPanel.find('form').submit();
+        });
+
+        filterPanel.on('click', '.btn_toggle', function () {
+            return jQuery(this).toggleClass('is_open') && filterPanel.find('form').slideToggle();
+        });
+    }
+
+    var sorting = jQuery('.sorting');
+    if (sorting.length) {
+        sorting.on('change', 'select', function () {
+            var _this = jQuery(this),
+                inputName = _this.attr('name'),
+                inputValue = _this.val();
+
+            return filterPanel.find('input[name='+inputName+']').val(inputValue) && filterPanel.find('form').submit();
+        });
     }
 
     var tabs = jQuery(".tabs");
@@ -255,7 +300,7 @@ jQuery(document).ready(function() {
 
     var boxCatalog = jQuery('.box_catalog');
     if (boxCatalog.length) {
-        var btnToggle = jQuery('.btn_toggle');
+        var btnToggle = boxCatalog.find('.btn_toggle');
         boxCatalog.on('click', '.btn_catalog,.btn_toggle', function () {
             return btnToggle.toggleClass('is_open') && boxCatalog.find('.box_catalog-list').slideToggle();
         });

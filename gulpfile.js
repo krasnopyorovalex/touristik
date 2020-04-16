@@ -39,7 +39,7 @@ const config = {
     }
 };
 
-gulp.task('build', function () {
+function css (done) {
     gulp.src(config.src + config.css.src)
             .pipe(preproc({
                 use:[
@@ -58,10 +58,12 @@ gulp.task('build', function () {
             .pipe(browserSync.reload({
                 stream: true
             }));
-});
 
-gulp.task('js', function(){
-    return gulp.src(config.src + config.js.src)
+    done();
+}
+
+function js (done){
+    gulp.src(config.src + config.js.src)
         // .pipe(babel({
         //     presets: ['@babel/env']
         // }))
@@ -72,21 +74,33 @@ gulp.task('js', function(){
         .pipe(browserSync.reload({
             stream: true
         }));
-});
 
-gulp.task('watch', ['browserSync'], function () {
-    gulp.watch(config.src + config.css.watch, ['build']);
-    gulp.watch(config.src + config.js.src, ['js']);
-    gulp.watch(config.src + config.html.src, browserSync.reload);
-});
+    done();
+}
 
-gulp.task('browserSync', function () {
+function browser_sync (done) {
     browserSync.init({
         server: {
             baseDir: config.src
         }
     });
-});
+
+    done();
+}
+
+function watch_files () {
+    gulp.watch(config.src + config.css.watch, css);
+    gulp.watch(config.src + config.js.src, gulp.series(js, browserSync.reload));
+    gulp.watch(config.src + config.html.src, gulp.series(browserSync.reload));
+}
+
+gulp.task('css', css);
+
+gulp.task('default', gulp.series(browser_sync, watch_files));
+
+
+
+
 
 gulp.task('sprites', function () {
     return gulp.src(config.src + config.spriteSvg.img)

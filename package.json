@@ -3,24 +3,25 @@
   "version": "1.0.0",
   "main": "gulpfile.js",
   "dependencies": {
-    "browser-sync": "^2.26.3",
-    "gulp": "^3.9.1",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.4.0",
     "gulp-concat": "~2.6.0",
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-rename": "^1.2.0",
-    "gulp-stylus": "~2.1.0",
+    "gulp-stylus": "^2.7.0",
     "gulp-svg-sprites": "^4.1.2",
-    "gulp-uglify": "~1.4.2",
-    "gulp.spritesmith": "^4.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "gulp.spritesmith": "^6.11.0",
     "merge-stream": "~1.0.0",
     "natives": "^1.1.6",
     "smart-grid": "^1.1.0",
     "stylus-type-utils": "0.0.3"
   },
   "resolutions": {
-    "natives": "1.1.4"
+    "natives": "1.1.6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,8 +30,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "gulp-babel": "^8.0.0",
     "nib": "^1.1.2"
   }

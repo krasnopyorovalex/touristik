@@ -21,7 +21,7 @@ img
     &:before
       position: absolute
       content ""
-      background-color: rgba(0, 0, 0, 0.5)
+      background-color: rgba(0, 0, 0, 0.2)
       top: 0
       right: 0
       left: 0
@@ -112,6 +112,7 @@ img
   position: relative
   border 1px solid $mainColor
   transition: all 300ms ease
+  color: $whiteColor;
   .icon {
     width: 16px
     height: 16px
@@ -234,6 +235,11 @@ section, main
       flex-wrap wrap
       flex-direction column
       align-items center
+      max-height 286px
+      overflow hidden
+      img {
+        object-fit cover
+      }
       a
         margin auto 0
     &:hover
@@ -608,6 +614,9 @@ table th, table td
   text-transform: uppercase;
   background-color: $mainColor
   padding: 1.2rem 1rem
+  md-block({
+    order: 1
+  })
   &-list {
     box-sizing: border-box;
     display: none;
@@ -687,6 +696,9 @@ table th, table td
   height: 14px;
   text-align: left;
   margin: 0 0 0 auto;
+  md-block({
+    margin: 0 0 0 auto
+  })
   &:after
     right: 0;
     bottom: 0;
@@ -718,4 +730,10 @@ table th, table td
       transform: rotate(45deg)
 .icon_arrow {
   sprite($icon_arrow_menu_down_white);
+}
+.as_center {
+  align-self center
+}
+.flex {
+  display: flex
 }

@@ -160,18 +160,25 @@
             <div class="row">
                 <div class="col-3">
                     <div class="filter__panel">
+                        <div class="filter__panel-btn">
+                            Фильтры
+                            <div class="btn_toggle">
+                                <span></span>
+                            </div>
+                        </div>
                         <form action="#" class="filter__panel-form">
+                            <input type="hidden" value="" name="price">
                             <div class="filter__block-price">
                                 <div class="label">Цена, ₽:</div>
                                 <div id="keypress"></div>
                                 <div class="single__block-price">
                                     <div>
                                         <label for="input__price-from">от:</label>
-                                        <input type="text" id="input__price-from">
+                                        <input type="text" id="input__price-from" value="1500" data-value="100">
                                     </div>
                                     <div>
                                         <label for="input__price-to">до:</label>
-                                        <input type="text" id="input__price-to">
+                                        <input type="text" id="input__price-to" value="8000" data-value="10000">
                                     </div>
                                 </div>
                             </div>
@@ -254,6 +261,7 @@
                                 </div>
                             </div>
                         </form>
+                        <div class="run_filter-btn">Показать</div>
                     </div>
                 </div>
                 <div class="col-9">
@@ -347,7 +355,7 @@
                         <div class="catalog__items-item">
                             <figure>
                                 <a href="#">
-                                    <img src="./img/item-01.png" alt="">
+                                    <img src="./img/product_img.jpeg" alt="">
                                 </a>
                             </figure>
                             <div class="catalog__items-info">
@@ -723,7 +731,7 @@
 
     <div class="popup__show-bg"></div><div class="notify"></div>
 
-    <script src="js/jquery.3.3.1.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/app.min.js"></script>
     </body>
 </html>
